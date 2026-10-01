@@ -1,0 +1,139 @@
+{
+ "note": "What each layout tool returned for data/raw when Lab 1 was built. layout_tools.recorded() reads this where a tool cannot run.",
+ "docling": {
+  "recorded_on": "2026-09-28",
+  "where": "macOS, Docling 2.130.0 (first run 469s including about 500 MB of model downloads, second run 28s)",
+  "files": {
+   "partner_agreement_extract.pdf": {
+    "text": "## FreshCart Restaurant Partner Agreement (extract)\n\nSchedule 4 - Cost allocation for customer refunds\n\n## 4.1 Allocation principle\n\nWhere a refund is issued to a customer, the cost of that refund is borne by the party responsible for the underlying failure, determined as set out in this Schedule.\n\n## 4.2 Partner-borne events\n\nThe Partner bears the full cost of the refund where the failure arises from food preparation, incorrect items despatched, missing items at the point of handover, or packaging inadequate for transport of liquid contents.\n\nPackaging adequacy is assessed against the FreshCart Packaging Standard current at the time of the order. Repeated packaging failures may trigger review under clause 9.\n\n## 4.3 Platform-borne events\n\nFreshCart bears the full cost of the refund where the failure arises from delivery partner handling, delivery delay beyond the committed window, or application error.\n\n## 4.4 Shared events\n\nWhere responsibility cannot be determined from available evidence within the review period, the cost is shared equally between the parties.\n\n## 4.5 Disputes\n\nThe Partner may dispute an allocation within fifteen days of the monthly statement. Disputes are resolved under clause 12.",
+    "seconds": 371.1
+   },
+   "refund_claims_march_2024.xlsx": {
+    "text": "| FreshCart \u2014 Refund Claims Register                          | FreshCart \u2014 Refund Claims Register                          | FreshCart \u2014 Refund Claims Register                          | FreshCart \u2014 Refund Claims Register                          | FreshCart \u2014 Refund Claims Register                          | FreshCart \u2014 Refund Claims Register                          | FreshCart \u2014 Refund Claims Register                          |\n|-------------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|\n| Confidential \u2014 Support Operations \u2014 generated 01 April 2024 | Confidential \u2014 Support Operations \u2014 generated 01 April 2024 | Confidential \u2014 Support Operations \u2014 generated 01 April 2024 | Confidential \u2014 Support Operations \u2014 generated 01 April 2024 | Confidential \u2014 Support Operations \u2014 generated 01 April 2024 | Confidential \u2014 Support Operations \u2014 generated 01 April 2024 | Confidential \u2014 Support Operations \u2014 generated 01 April 2024 |\n\n| Region: All   |             |             |                 |            |              |                  |\n|---------------|-------------|-------------|-----------------|------------|--------------|------------------|\n| Claim ID      | Order ID    | Customer ID | Reason          | Claim date | Amount (INR) | Status           |\n| CLM-2024-0311 | ORD-8842190 | CUS-40219   | Spillage        | 2024-03-02 | 480          | Approved         |\n| CLM-2024-0312 | ORD-8842771 | CUS-11884   | Not delivered   | 2024-03-02 | 1290         | Approved         |\n| CLM-2024-0313 | ORD-8843002 | CUS-40219   | Spillage        | 2024-03-09 | 355          | Approved         |\n| CLM-2024-0314 | ORD-8843918 | CUS-77310   | Incorrect items | 2024-03-11 | 720          | Declined         |\n| CLM-2024-0315 | ORD-8844277 | CUS-40219   | Spillage        | 2024-03-19 | 610          | Approved         |\n| CLM-2024-0316 | ORD-8844901 | CUS-40219   | Spillage        | 2024-03-27 | 545          | Declined - limit |\n| CLM-2024-0317 | ORD-8845330 | CUS-23001   | Partial order   | 2024-03-28 | 210          | Approved         |\n| CLM-2024-0318 | ORD-8845914 | CUS-11884   | Damage          | 2024-03-30 | 399          | Under review     |\n\n| Note: CUS-40219 exceeded the rolling 30 day claim limit on 27 March.   |\n|------------------------------------------------------------------------|",
+    "seconds": 0.3
+   },
+   "refund_policy_v2_2022.pdf": {
+    "text": "## FreshCart Customer Refund Policy\n\nVersion 2.0 \u00b7 Effective 15 June 2022\n\n## 1. Scope\n\nThis policy governs refunds for food delivery orders placed through the FreshCart consumer application. It applies to all orders in India from the effective date above.\n\n## 2. Eligible reasons for refund\n\nA customer is eligible to request a refund where the order was not delivered, was delivered materially incomplete, arrived in a spilled or damaged condition, or where the items delivered do not match the items ordered.\n\n## 2.1 Spillage and damage\n\nSpillage means leakage of contents from the packaging. All spillage claims attract a full refund of item value. Photographic evidence must be submitted within 12 hours of delivery.\n\n## 3. Claim frequency limits\n\nA customer may make up to two refund claims in any rolling thirty day period. A third and any subsequent claim within that period is automatically declined.\n\n## 4. Refund timelines\n\nApproved refunds are credited to the original payment method within seven to ten working days.\n\n## 5. Exclusions\n\nRefunds are not available where the customer provided an incorrect delivery address or where the claim is made more than 24 hours after the delivery timestamp.",
+    "seconds": 1.1
+   },
+   "refund_policy_v3_2024.pdf": {
+    "text": "## FreshCart Customer Refund Policy\n\nVersion 3.0 \u00b7 Effective 01 April 2024 \u00b7 Supersedes v2.0 (2022)\n\n## 1. Scope\n\nThis policy governs refunds for food delivery orders placed through the FreshCart consumer application. It applies to all orders in India from the effective date above. Restaurant partner liability is governed separately by the Partner Agreement.\n\n## 2. Eligible reasons for refund\n\nA customer is eligible to request a refund where the order was not delivered, was delivered materially incomplete, arrived in a spilled or damaged condition, or where the items delivered do not match the items ordered.\n\n## 2.1 Spillage and damage\n\nSpillage means leakage of liquid or semi-solid contents from the packaging such that the item is unfit for consumption. Partial leakage that does not render the item unfit is assessed as damage and attracts a partial refund of up to fifty percent of item value. Photographic evidence must be submitted within 24 hours of delivery.\n\n## 3. Claim frequency limits\n\nA customer may make up to three refund claims in any rolling thirty day period. A fourth and any subsequent claim within that period is automatically declined by the system and must be escalated to a support supervisor for manual review. This limit was raised from two claims under v2.0 of this policy.\n\n## 4. Refund timelines\n\nApproved refunds are credited to the original payment method within five to seven working days. Wallet credit, where the customer elects it, is applied immediately.\n\n## 5. Exclusions\n\nRefunds are not available where the customer provided an incorrect delivery address, where delivery was refused without cause, or where the claim is made more than 48 hours after the delivery timestamp.",
+    "seconds": 0.4
+   },
+   "support_escalation_sop_scanned.pdf": {
+    "text": "## FreshCart Support Escalation SOP\n\nDocument SOP-SUP-014 Revision 5 March 2024\n\n## 1. When to escalate to a supervisor\n\nA support agent must escalate to a supervisor where the customer has exceeded the claim frequency limit set out in the Customer Refund Policy, where the order value exceeds INR 5,000, or where the customer has raised a complaint about a previous refund decision.\n\n## 2. Evidence required before escalation\n\nThe agent must attach the order identifier, the delivery timestamp, any photographic evidence submitted by the customer, and the customer's claim history for the preceding thirty days.\n\n## 3. Supervisor response time\n\nSupervisors must respond to an escalated case within four working hours. Cases unresolved after eight working hours are routed automatically to the regional support manager.",
+    "seconds": 8.6
+   },
+   "support_qbr_q1_2024.pptx": {
+    "text": "Support Operations QBR \u2014 Q1 2024\n\nPrepared for the Support Leadership Review, 12 April 2024\n\nRefund volume and rate\n\nRefund claim volume rose 18 percent quarter on quarter. Order volume rose 22 percent over the same period, so the refund rate fell slightly from 4.4 percent to 4.2 percent.\n\nAction: revise the spillage evidence window from 24 hours after partner feedback in Q2.\n\nEscalation performance\n\nP2 cases represented 61 percent of all escalations, driven mainly by spillage claims on liquid-heavy orders.\n\nEscalations exceeding the four hour supervisor response target: 312 cases, concentrated in the Delhi NCR and Bengaluru regions during the evening peak.",
+    "seconds": 0.1
+   },
+   "support_sla_matrix.docx": {
+    "text": "## FreshCart Support SLA Matrix\n\nDocument SLA-SUP-2024-02 \u00b7 Effective 01 April 2024 \u00b7 Owner: Support Operations\n\nThe following turnaround times apply to customer contacts received through the in-app chat channel. TAT is measured from first customer message to first substantive agent response, excluding automated acknowledgements.\n\n### Turnaround targets by priority\n\n| **Priority**   | **Trigger**                                          | **First response TAT**   | **Resolution TAT**   | **Escalation path**    |\n|----------------|------------------------------------------------------|--------------------------|----------------------|------------------------|\n| P1             | Order value over INR 5,000, or food safety complaint | 15 minutes               | 2 hours              | Supervisor immediately |\n| P2             | Non-delivery, or spillage with photographic evidence | 30 minutes               | 4 hours              | Supervisor at 3 hours  |\n| P3             | Partial order issue, or incorrect item               | 2 hours                  | 24 hours             | Supervisor at 18 hours |\n| P4             | General query, account or wallet question            | 4 hours                  | 48 hours             | None                   |\n\n### Notes\n\nTAT targets are suspended during declared platform incidents.\n\nClaim frequency checks are performed before a P2 case is accepted; see the Customer Refund Policy for the applicable limit.",
+    "seconds": 0.1
+   }
+  }
+ },
+ "ai_parse_document": {
+  "recorded_on": "2026-09-28",
+  "where": "Azure Databricks serverless, East US, 6 files in 14.6s",
+  "files": {
+   "partner_agreement_extract.pdf": {
+    "text": "FreshCart Restaurant Partner Agreement (extract)\n\nSchedule 4 \u2014 Cost allocation for customer refunds\n\n4.1 Allocation principle\n\nWhere a refund is issued to a customer, the cost of\nthat refund is borne by the party responsible for the\nunderlying failure, determined as set out in this\nSchedule.\n\n4.2 Partner-borne events\n\nThe Partner bears the full cost of the refund where\nthe failure arises from food preparation, incorrect\nitems despatched, missing items at the point of\nhandover, or packaging inadequate for transport of\nliquid contents.\n\nPackaging adequacy is assessed against the\nFreshCart Packaging Standard current at the time\nof the order. Repeated packaging failures may\ntrigger review under clause 9.\n\n4.3 Platform-borne events\n\nFreshCart bears the full cost of the refund where\nthe failure arises from delivery partner handling,\ndelivery delay beyond the committed window, or\napplication error.\n\n4.4 Shared events\n\nWhere responsibility cannot be determined from\navailable evidence within the review period, the\ncost is shared equally between the parties.\n\n4.5 Disputes\n\nThe Partner may dispute an allocation within fifteen\ndays of the monthly statement. Disputes are\nresolved under clause 12.",
+    "types": [
+     "title",
+     "text",
+     "section_header",
+     "text",
+     "section_header",
+     "text",
+     "section_header",
+     "text",
+     "section_header",
+     "text",
+     "section_header",
+     "text"
+    ],
+    "errors": []
+   },
+   "refund_policy_v2_2022.pdf": {
+    "text": "FreshCart Customer Refund Policy\n\nVersion 2.0 \u00b7 Effective 15 June 2022\n\n1. Scope\n\nThis policy governs refunds for food delivery orders placed through the FreshCart consumer application. It applies\nto all orders in India from the effective date above.\n\n2. Eligible reasons for refund\n\nA customer is eligible to request a refund where the order was not delivered, was delivered materially incomplete,\narrived in a spilled or damaged condition, or where the items delivered do not match the items ordered.\n\n2.1 Spillage and damage\n\nSpillage means leakage of contents from the packaging. All spillage claims attract a full refund of item value.\nPhotographic evidence must be submitted within 12 hours of delivery.\n\n3. Claim frequency limits\n\nA customer may make up to two refund claims in any rolling thirty day period. A third and any subsequent claim\nwithin that period is automatically declined.\n\n4. Refund timelines\n\nApproved refunds are credited to the original payment method within seven to ten working days.\n\n5. Exclusions\n\nRefunds are not available where the customer provided an incorrect delivery address or where the claim is made\nmore than 24 hours after the delivery timestamp.",
+    "types": [
+     "title",
+     "text",
+     "section_header",
+     "text",
+     "section_header",
+     "text",
+     "section_header",
+     "text",
+     "section_header",
+     "text",
+     "section_header",
+     "text",
+     "section_header",
+     "text"
+    ],
+    "errors": []
+   },
+   "refund_policy_v3_2024.pdf": {
+    "text": "FreshCart Customer Refund Policy\n\nVersion 3.0 \u00b7 Effective 01 April 2024 \u00b7 Supersedes v2.0 (2022)\n\n1. Scope\n\nThis policy governs refunds for food delivery orders placed through the FreshCart consumer application. It applies\nto all orders in India from the effective date above. Restaurant partner liability is governed separately by the Partner\nAgreement.\n\n2. Eligible reasons for refund\n\nA customer is eligible to request a refund where the order was not delivered, was delivered materially incomplete,\narrived in a spilled or damaged condition, or where the items delivered do not match the items ordered.\n\n2.1 Spillage and damage\n\nSpillage means leakage of liquid or semi-solid contents from the packaging such that the item is unfit for\nconsumption. Partial leakage that does not render the item unfit is assessed as damage and attracts a partial\nrefund of up to fifty percent of item value. Photographic evidence must be submitted within 24 hours of delivery.\n\n3. Claim frequency limits\n\nA customer may make up to three refund claims in any rolling thirty day period. A fourth and any subsequent claim\nwithin that period is automatically declined by the system and must be escalated to a support supervisor for manual\nreview. This limit was raised from two claims under v2.0 of this policy.\n\n4. Refund timelines\n\nApproved refunds are credited to the original payment method within five to seven working days. Wallet credit,\nwhere the customer elects it, is applied immediately.\n\n5. Exclusions\n\nRefunds are not available where the customer provided an incorrect delivery address, where delivery was refused\nwithout cause, or where the claim is made more than 48 hours after the delivery timestamp.",
+    "types": [
+     "title",
+     "text",
+     "section_header",
+     "text",
+     "section_header",
+     "text",
+     "section_header",
+     "text",
+     "section_header",
+     "text",
+     "section_header",
+     "text",
+     "section_header",
+     "text"
+    ],
+    "errors": []
+   },
+   "support_escalation_sop_scanned.pdf": {
+    "text": "FreshCart Support Escalation SOP\n\nDocument SOP-SUP-014 \u00b7 Revision 5 \u00b7 March 2024\n\n1. When to escalate to a supervisor\n\nA support agent must escalate to a supervisor where the customer has exceeded the claim frequency limit set out in the Customer Refund Policy, where the order value exceeds INR 5,000, or where the customer has raised a complaint about a previous refund decision.\n\n2. Evidence required before escalation\n\nThe agent must attach the order identifier, the delivery timestamp, any photographic evidence submitted by the customer, and the customer's claim history for the preceding thirty days.\n\n3. Supervisor response time\n\nSupervisors must respond to an escalated case within four working hours. Cases unresolved after eight working hours are routed automatically to the regional support manager.",
+    "types": [
+     "title",
+     "text",
+     "section_header",
+     "text",
+     "section_header",
+     "text",
+     "section_header",
+     "text"
+    ],
+    "errors": []
+   },
+   "support_qbr_q1_2024.pptx": {
+    "text": "Support Operations QBR \u2014 Q1 2024\n\nPrepared for the Support Leadership Review, 12 April 2024\n\nRefund volume and rate\n\nRefund claim volume rose 18 percent quarter on quarter. Order volume rose 22 percent over the same period, so the refund rate fell\nslightly from 4.4 percent to 4.2 percent.\n\nAction: revise the spillage evidence window from 24 hours after partner feedback in Q2.\n\nEscalation performance\n\nP2 cases represented 61 percent of all escalations, driven mainly by spillage claims on liquid-heavy orders.\n\nEscalations exceeding the four hour supervisor response target: 312 cases, concentrated in the Delhi NCR and Bengaluru regions during the\nevening peak.",
+    "types": [
+     "title",
+     "text",
+     "title",
+     "text",
+     "title",
+     "text"
+    ],
+    "errors": []
+   },
+   "support_sla_matrix.docx": {
+    "text": "FreshCart Support SLA Matrix\n\nDocument SLA-SUP-2024-02 \u00b7 Effective 01 April 2024 \u00b7 Owner: Support Operations\n\nThe following turnaround times apply to customer contacts received through the in-app\nchat channel. TAT is measured from first customer message to first substantive agent\nresponse, excluding automated acknowledgements.\n\nTurnaround targets by priority\n\nPriority | Trigger | First response TAT | Resolution TAT | Escalation path\nP1 | Order value over INR 5,000, or food safety complaint | 15 minutes | 2 hours | Supervisor immediately\nP2 | Non-delivery, or spillage with photographic evidence | 30 minutes | 4 hours | Supervisor at 3 hours\nP3 | Partial order issue, or incorrect item | 2 hours | 24 hours | Supervisor at 18 hours\nP4 | General query, account or wallet question | 4 hours | 48 hours | None\n\nNotes\n\nTAT targets are suspended during declared platform incidents.\n\nClaim frequency checks are performed before a P2 case is accepted; see the Customer\nRefund Policy for the applicable limit.",
+    "types": [
+     "title",
+     "text",
+     "section_header",
+     "table",
+     "section_header",
+     "text"
+    ],
+    "errors": []
+   }
+  }
+ }
+}

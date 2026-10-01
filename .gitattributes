@@ -1,0 +1,2 @@
+# Windows batch files keep their CRLF line endings, in a clone and in Download ZIP alike.
+*.cmd -text

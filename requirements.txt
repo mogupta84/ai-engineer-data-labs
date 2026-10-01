@@ -1,0 +1,33 @@
+# AI Engineer (Data), Labs 1 and 2, on your own machine. Python 3.11 or newer.
+# On Databricks you do not need this file: each notebook installs what it uses in its first cell.
+
+# reading the five formats, cutting them into pieces, the small search index
+numpy>=1.24
+scikit-learn>=1.3
+pypdf>=4.0
+python-docx>=1.1
+python-pptx>=0.6.23
+openpyxl>=3.1
+Pillow>=10.0
+rank_bm25>=0.2.2
+matplotlib>=3.8             # the Lab 2 chart
+
+# running the notebooks in VS Code or Jupyter
+ipykernel>=6.29
+
+# Lab 1, Step 2: the loader comparison
+langchain-community>=0.3
+docx2txt>=0.8
+llama-index-core>=0.12
+llama-index-readers-file>=0.4
+
+# Lab 1, Step 7: a current open-source embedding model, no key needed
+fastembed>=0.8
+
+# Lab 2: the three vector databases, all running inside Python. Pinned, because Qdrant's
+# in-process edition is marked beta. milvus-lite is named on its own because pymilvus's
+# own "milvus-lite" extra skips Windows.
+chromadb==1.5.9
+qdrant-edge-py==0.8.0
+pymilvus==3.0.2
+milvus-lite==3.2.1
