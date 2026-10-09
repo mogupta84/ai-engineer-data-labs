@@ -1,5 +1,5 @@
 @echo off
-REM AI Engineer (Data), Labs 1 and 2: one-time setup on Windows.
+REM AI Engineer (Data), Labs 1 to 4: one-time setup on Windows.
 REM Run it from Command Prompt, inside this folder:   setup\setup_windows.cmd
 REM Safe to run again; it skips what is already done.
 setlocal
@@ -32,5 +32,5 @@ if errorlevel 1 exit /b 1
 
 echo.
 echo Setup finished. Open this folder in VS Code, open notebooks\lab01_ingest.ipynb,
-echo choose the .venv kernel, and run all cells.
+echo choose the .venv kernel, and run all cells. Labs 2 to 4 are in the same folder.
 endlocal

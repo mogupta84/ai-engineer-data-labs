@@ -1,4 +1,4 @@
-# AI Engineer (Data), Labs 1 and 2, on your own machine. Python 3.11 or newer.
+# AI Engineer (Data), Labs 1 to 4, on your own machine. Python 3.11 or newer.
 # On Databricks you do not need this file: each notebook installs what it uses in its first cell.
 
 # reading the five formats, cutting them into pieces, the small search index
@@ -14,6 +14,10 @@ matplotlib>=3.8             # the Lab 2 chart
 
 # running the notebooks in VS Code or Jupyter
 ipykernel>=6.29
+
+# Lab 4: run the answer service as an API
+fastapi>=0.110
+uvicorn>=0.29
 
 # Lab 1, Step 2: the loader comparison
 langchain-community>=0.3

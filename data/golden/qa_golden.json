@@ -1,0 +1,32 @@
+{
+  "about": "Golden question set for Labs 4, 8, 10 and 12. 20 answerable questions, each with facts a correct answer must contain (any one of `expect_any`), and 5 questions the corpus cannot answer. Report refusal rates for the two groups SEPARATELY.",
+  "answerable": [
+    {"id": "A01", "question": "How many refund claims can a customer make in a rolling thirty day period?", "expect_any": ["three", "3"]},
+    {"id": "A02", "question": "Who bears the cost of a refund when packaging is inadequate for liquid contents?", "expect_any": ["partner"]},
+    {"id": "A03", "question": "Within how many hours must photographic evidence of spillage be submitted?", "expect_any": ["24"]},
+    {"id": "A04", "question": "How many working days does it take for an approved refund to be credited?", "expect_any": ["five to seven", "5 to 7", "5-7"]},
+    {"id": "A05", "question": "When is wallet credit applied?", "expect_any": ["immediately"]},
+    {"id": "A06", "question": "How long does a partner have to dispute a cost allocation?", "expect_any": ["fifteen", "15"]},
+    {"id": "A07", "question": "Which customer exceeded the claim limit in March 2024?", "expect_any": ["CUS-40219"]},
+    {"id": "A08", "question": "What is the status of claim CLM-2024-0314?", "expect_any": ["Declined"]},
+    {"id": "A09", "question": "How is the cost shared when responsibility for a failure cannot be determined?", "expect_any": ["equally"]},
+    {"id": "A10", "question": "What was the refund rate in Q1 2024 according to the QBR?", "expect_any": ["4.2"]},
+    {"id": "A11", "question": "How many escalations exceeded the four hour supervisor response target in Q1 2024?", "expect_any": ["312"]},
+    {"id": "A12", "question": "How is partial leakage that does not make the item unfit treated?", "expect_any": ["damage", "fifty", "50"]},
+    {"id": "A13", "question": "Can a customer get a refund if they gave an incorrect delivery address?", "expect_any": ["not available", "no", "cannot", "not eligible"]},
+    {"id": "A14", "question": "What is the first response TAT for a P2 case?", "expect_any": ["30 minutes", "thirty minutes"]},
+    {"id": "A15", "question": "What is the first response TAT for a food safety complaint?", "expect_any": ["15 minutes", "fifteen minutes"]},
+    {"id": "A16", "question": "Who bears the refund cost when the failure is caused by delivery partner handling?", "expect_any": ["FreshCart", "platform"]},
+    {"id": "A17", "question": "What happens to a fourth refund claim within thirty days?", "expect_any": ["declined", "escalat"]},
+    {"id": "A18", "question": "By how much did refund claim volume rise quarter on quarter in Q1 2024?", "expect_any": ["18"]},
+    {"id": "A19", "question": "How late after delivery can a refund claim be made under the current policy?", "expect_any": ["48"]},
+    {"id": "A20", "question": "What does spillage mean under the current refund policy?", "expect_any": ["leakage"]}
+  ],
+  "unanswerable": [
+    {"id": "U01", "question": "What is FreshCart's refund policy for grocery orders in Singapore?"},
+    {"id": "U02", "question": "How many delivery partners does FreshCart employ?"},
+    {"id": "U03", "question": "What is the email address of FreshCart's chief executive?"},
+    {"id": "U04", "question": "Are FreshCart Plus subscription fees refundable?"},
+    {"id": "U05", "question": "What was FreshCart's total revenue in 2023?"}
+  ]
+}
