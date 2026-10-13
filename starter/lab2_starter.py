@@ -3,7 +3,7 @@ LAB 2 STARTER: benchmark three vector databases and choose one.
 
     python starter/lab2_starter.py
 
-Chroma, Qdrant and Milvus all run inside Python, with no server and no account.
+Chroma, Qdrant and FAISS all run inside Python, with no server and no account.
 They come from requirements-frameworks.txt (setup_windows.cmd installs it).
 Reference: solutions/lab2_solution.py
 """

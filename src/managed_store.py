@@ -1,7 +1,7 @@
 """
 Lab 2 tool step: the dial you tuned, on a service that does not offer it.
 
-In Lab 2 you swept ef on Chroma, Qdrant and Milvus and chose an operating point.
+In Lab 2 you swept ef on Chroma, Qdrant and FAISS and chose an operating point.
 A managed vector service picks that setting for you. Databricks AI Search (called
 Vector Search until 2026) exposes an index and a query, and no accuracy dial.
 
@@ -31,7 +31,7 @@ AI_SEARCH_INDEX = "aieng_dbx_itc.freshcart.lab2_bench"
 # documentation in September 2026. Check it again on the day you buy: this table
 # is the first thing that goes stale.
 DIALS = [
-    {"option": "Chroma, Qdrant, Milvus (Lab 2)", "index type": "you choose",
+    {"option": "Chroma, Qdrant, FAISS (Lab 2)", "index type": "you choose",
      "accuracy dial at query time": "yes, ef", "pre-filter": "yes",
      "you can measure recall": "yes"},
     {"option": "Databricks AI Search", "index type": "chosen for you",

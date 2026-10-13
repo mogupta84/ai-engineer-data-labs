@@ -6,7 +6,7 @@
 
 ### The curve behind that choice
 
-| ef | Chroma recall@10 | Qdrant recall@10 | Milvus recall@10 | p50 ms of your choice |
+| ef | Chroma recall@10 | Qdrant recall@10 | FAISS recall@10 | p50 ms of your choice |
 |---|---|---|---|---|
 | 10 | | | | |
 | 20 | | | | |

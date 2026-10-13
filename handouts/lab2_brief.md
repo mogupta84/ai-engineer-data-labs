@@ -3,7 +3,7 @@
 **Time** 80 minutes · **Pairs** · `notebooks/lab02_vector_stores.ipynb` · `starter/lab2_starter.py`
 
 ## Goal
-Produce a recall-versus-latency curve for Chroma, Qdrant and Milvus, and a one-page
+Produce a recall-versus-latency curve for Chroma, Qdrant and FAISS, and a one-page
 memo your architect would accept: which database, at which setting, against which target.
 
 ## Steps

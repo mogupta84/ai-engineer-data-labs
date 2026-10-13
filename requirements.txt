@@ -28,10 +28,8 @@ llama-index-readers-file>=0.4
 # Lab 1, Step 7: a current open-source embedding model, no key needed
 fastembed>=0.8
 
-# Lab 2: the three vector databases, all running inside Python. Pinned, because Qdrant's
-# in-process edition is marked beta. milvus-lite is named on its own because pymilvus's
-# own "milvus-lite" extra skips Windows.
+# Lab 2: the three vector databases, all running inside Python. Qdrant is pinned, because
+# its in-process edition is marked beta. FAISS replaced Milvus Lite on 13 Oct 2026.
 chromadb==1.5.9
 qdrant-edge-py==0.8.0
-pymilvus==3.0.2
-milvus-lite==3.2.1
+faiss-cpu>=1.8

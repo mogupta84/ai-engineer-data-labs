@@ -6,7 +6,7 @@ run them again on your own Databricks workspace or on your own computer.
 | Day | Lab | What you do | Notebook |
 |---|---|---|---|
 | 1 | 1 | Load seven files in five formats, find the two that fail silently, cut them into pieces, label every piece, and see why a search returns a withdrawn policy | `lab01_ingest` |
-| 2 | 2 | Put the same data into three vector databases, Chroma, Qdrant and Milvus, measure how much each finds and how fast, and defend one choice in a memo | `lab02_vector_stores` |
+| 2 | 2 | Put the same data into three vector databases, Chroma, Qdrant and FAISS, measure how much each finds and how fast, and defend one choice in a memo | `lab02_vector_stores` |
 | 3 | 3 | Add keyword search, reranking and a recency filter to meaning search one at a time, and score each stage on 20 judged questions with nDCG@10 | `lab03_hybrid` |
 | 3 | 3b | The same four stages with real models served by Databricks: an embedding model, a model reranker and a document reader for the scanned PDF (Databricks only) | `lab03b_real_models` |
 | 4 | 4 | Build an answer service that cites its sources, break it with fake citations, measure refusals, supported sentences and right facts, and run it as an API | `lab04_rag_api` |

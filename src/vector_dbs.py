@@ -5,8 +5,11 @@ Lab 2: three real vector databases behind one small interface.
            Overflow's 2025 survey. Graph index (HNSW).
   Qdrant   qdrant-edge-py 0.8.0, Qdrant's in-process edition (marked beta).
            Graph index (HNSW), plus compression.
-  Milvus   Milvus Lite 3.2.1 through pymilvus, the vector database with the most
-           GitHub stars. Graph index (HNSW), plus grouped (IVF) indexes.
+  FAISS    faiss-cpu, Meta's vector search library, the engine inside many vector
+           databases. Graph index (HNSW), plus grouped (IVF) and compressed indexes.
+
+Milvus Lite was the third database until 13 October 2026: on Databricks serverless it
+can no longer open the local server it talks to, so FAISS took its place.
 
 All three run inside this Python process: no server, no Docker, no account. Each
 one builds a real index and exposes the same query-time dial, called ef: how many
@@ -17,9 +20,8 @@ Three things this module does on purpose, each measured on 30 September 2026:
   - Chroma only applies a new ef after the collection is opened again, so
     set_effort() reopens it. Changing the setting on an open collection silently
     does nothing (recall stayed at 0.809 before and after the change).
-  - Milvus Lite checks every stored row in Python before each search, so one
-    question at a time costs about 30 ms at 100,000 rows. measure() therefore also
-    times 200 questions sent in one call, where that check is paid once.
+  - measure() times questions one at a time and also 200 sent in one call, because
+    some databases pay a fixed cost per call that one call for many questions shares.
   - Every database is loaded the same way, 5,000 rows per call, so the loading
     pattern cannot tilt the result.
 
@@ -34,13 +36,8 @@ from dataclasses import dataclass
 
 import numpy as np
 
-# Milvus Lite speaks gRPC to itself inside this process. Without this line gRPC
-# prints harmless keep-alive messages into the notebook output.
-os.environ.setdefault("GRPC_VERBOSITY", "NONE")
-os.environ.setdefault("GLOG_minloglevel", "2")
-
-DATABASES = ("chroma", "qdrant", "milvus")
-PACKAGES = {"chroma": "chromadb", "qdrant": "qdrant-edge-py", "milvus": "milvus-lite"}
+DATABASES = ("chroma", "qdrant", "faiss")
+PACKAGES = {"chroma": "chromadb", "qdrant": "qdrant-edge-py", "faiss": "faiss-cpu"}
 LOAD_BATCH = 5_000
 EFFORTS = (10, 20, 40, 80, 160)
 MIDDLE_EFFORT = 40
@@ -240,55 +237,44 @@ class QdrantDB(_VectorDB):
             pass
 
 
-class MilvusDB(_VectorDB):
-    name = "milvus"
-    dial = "ef"
+class FaissDB(_VectorDB):
+    name = "faiss"
+    dial = "efSearch"
 
     def build(self, X, labels=None):
-        from pymilvus import MilvusClient, DataType
-        self.client = MilvusClient(str(self.folder / "milvus.db"))
-        schema = MilvusClient.create_schema(auto_id=False)
-        schema.add_field("id", DataType.INT64, is_primary=True)
-        schema.add_field("vec", DataType.FLOAT_VECTOR, dim=X.shape[1])
-        schema.add_field("label", DataType.INT64)
+        import faiss
         t0 = time.perf_counter()
-        self.client.create_collection("freshcart", schema=schema)
+        # HNSW graph, 16 links per vector; inner product equals cosine because every vector has length 1.
+        self.index = faiss.IndexHNSWFlat(X.shape[1], 16, faiss.METRIC_INNER_PRODUCT)
+        self.index.hnsw.efConstruction = 100
         for i in range(0, len(X), LOAD_BATCH):
-            j = min(len(X), i + LOAD_BATCH)
-            self.client.insert("freshcart", [{"id": r, "vec": X[r].tolist(),
-                                              "label": int(labels[r]) if labels is not None else 0}
-                                             for r in range(i, j)])
-        self.client.flush("freshcart")
-        ip = self.client.prepare_index_params()
-        ip.add_index(field_name="vec", index_type="HNSW", metric_type="COSINE", params={"M": 16, "efConstruction": 100})
-        self.client.create_index("freshcart", ip)
-        self.client.load_collection("freshcart")
+            self.index.add(np.ascontiguousarray(X[i:i + LOAD_BATCH], dtype="float32"))
+        # FAISS keeps no labels of its own: keep them beside the index, row number for row number.
+        self.labels = None if labels is None else np.asarray(labels)
         self.build_s = round(time.perf_counter() - t0, 1)
         return self.build_s
 
-    def _params(self):
-        return {"params": {"ef": max(self.effort, 10)}}
+    def _params(self, label=None):
+        import faiss
+        params = faiss.SearchParametersHNSW()
+        params.efSearch = self.effort
+        if label is not None:
+            # The database's own filter: only rows with this label may be visited and returned.
+            self._allowed = faiss.IDSelectorBatch(np.flatnonzero(self.labels == int(label)).astype("int64"))
+            params.sel = self._allowed
+        return params
 
     def search(self, q, k=10, label=None):
-        res = self.client.search("freshcart", data=[np.asarray(q, dtype="float32").tolist()], limit=k,
-                                 anns_field="vec", search_params=self._params(),
-                                 filter=f"label == {int(label)}" if label is not None else "")
-        return [int(h["id"]) for h in res[0]]
+        _, ids = self.index.search(np.asarray(q, dtype="float32")[None, :], k, params=self._params(label))
+        return [int(i) for i in ids[0] if i >= 0]          # -1 means "no more results"
 
     def search_many(self, Q, k=10):
-        res = self.client.search("freshcart", data=np.asarray(Q, dtype="float32").tolist(), limit=k,
-                                 anns_field="vec", search_params=self._params())
-        return [[int(h["id"]) for h in row] for row in res]
-
-    def close(self):
-        try:
-            self.client.close()
-        except Exception:
-            pass
+        _, ids = self.index.search(np.ascontiguousarray(Q, dtype="float32"), k, params=self._params())
+        return [[int(i) for i in row if i >= 0] for row in ids]
 
 
 def open_db(name: str, **kw) -> _VectorDB:
-    return {"chroma": ChromaDB, "qdrant": QdrantDB, "milvus": MilvusDB}[name](**kw)
+    return {"chroma": ChromaDB, "qdrant": QdrantDB, "faiss": FaissDB}[name](**kw)
 
 
 # ----------------------------------------------------------------------------
