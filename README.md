@@ -3,6 +3,9 @@
 The labs of the AI Engineer (Data) programme, with their data, so you can run them again on your own
 Databricks workspace. **Start with the essentials labs.** They are the course labs from now on.
 
+New here? Read the **[onboarding guide to Labs 1 to 6](AI_Engineer_Data_Onboarding_Guide_Labs_1-6.pdf)**
+(PDF, 6 pages): how to get the labs, how to run them, and what each lab teaches.
+
 ## Start here: the essentials labs
 
 Six short labs, about 50 minutes each, in `databricks/essentials/`. Each one uses LangChain from start
