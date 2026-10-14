@@ -1,14 +1,13 @@
 # AI Engineer (Data): Labs 1 to 6
 
 The labs of the AI Engineer (Data) programme, with their data, so you can run them again on your own
-Databricks workspace or on your own computer. Each lab comes in up to two versions:
+Databricks workspace. **Start with the essentials labs.** They are the course labs from now on.
 
-- **Essentials** (`databricks/essentials/`): short, LangChain from start to finish, a comment on
-  every line of code, about 50 minutes each. Labs 1 to 6. From Lab 5 on, this is the only version.
-- **Full** (`databricks/` and `notebooks/`): the longer class labs for Days 1 to 4, built on the
-  course's own code, with more measurements and a write-up.
+## Start here: the essentials labs
 
-## The essentials labs (Databricks)
+Six short labs, about 50 minutes each, in `databricks/essentials/`. Each one uses LangChain from start
+to finish, has a comment on every line of code, shows its problems in the middle of the notebook, and
+ends with a **Look it up yourself** cell that lists every setting of the libraries it used.
 
 | Day | Lab | What you do | Notebook |
 |---|---|---|---|
@@ -19,11 +18,44 @@ Databricks workspace or on your own computer. Each lab comes in up to two versio
 | 5 | 5 | Give a model three tools (document search, an official business number, SQL), watch which it picks, break it three ways, and serve two tools from an MCP server | `lab05_essentials` |
 | 6 | 6 | Let a model write SQL, find the numbers that are wrong with no error, add business rules and worked examples, and replace free SQL with a semantic layer, a sentence and a chart | `lab06_essentials` |
 
-Run them in order: each one builds on the last. Labs 4, 5 and 6 call
-`databricks-meta-llama-3-3-70b-instruct`, a model Databricks serves, billed per use: a few cents a
-run. Each essentials notebook downloads the data it needs from this repository on its first run.
+Run them in order: each one builds on the last.
 
-## The full labs (Days 1 to 4)
+### Set up once (10 minutes)
+
+You need a Databricks workspace with serverless compute. The free edition works for Labs 1 to 3; Labs 4
+to 6 also need Databricks' served models (below).
+
+1. In the sidebar, click **Workspace**, then open your Home folder.
+2. Click **Create**, then **Git folder**.
+3. Paste `https://github.com/mogupta84/ai-engineer-data-labs` as the Git repository URL and click **Create Git folder**.
+4. Open `databricks/essentials/lab01_essentials`, attach **Serverless**, and click **Run all**.
+5. Read each step while it runs. Each step says **What this does** and **What you should see**, so you
+   can check your output against it.
+
+To take just one lab instead: click **Import** in your Home folder, choose **URL**, and paste its raw
+link, for example `https://raw.githubusercontent.com/mogupta84/ai-engineer-data-labs/main/databricks/essentials/lab05_essentials.ipynb`.
+
+### What to expect
+
+- **The first cell installs the libraries and restarts Python**, about one to two minutes. The restart
+  is expected. A red line about `fastapi` and `starlette` in Lab 5 can be ignored.
+- **The data downloads itself.** On the first run each notebook fetches the FreshCart documents, the
+  warehouse and the test questions from this repository. No keys and no uploads.
+- **Labs 4, 5 and 6 call a language model** that Databricks serves, `databricks-meta-llama-3-3-70b-instruct`.
+  You sign in as yourself, so there is no key. It is billed per use, a few cents a run. If your workspace
+  does not offer served models, those three labs stop at the model step.
+- **The served model allows only a few calls a second per workspace.** If several people run Labs 4 to
+  6 at once, some calls wait and retry. Run them one at a time if you can.
+- **Numbers can move a little between runs**, even with the model set to its most predictable setting.
+  Each step's **What you should see** gives the range we measured.
+
+The data is a fictional food delivery company, FreshCart: two refund policies, a partner contract, a
+scanned procedure, a Word table, a slide deck, a spreadsheet and an orders warehouse, in `data/`.
+
+## The full labs (Days 1 to 4, optional)
+
+The longer class labs for Days 1 to 4, built on the course's own code, with more measurements and a
+written answer sheet. Use them after the essentials if you want to go deeper.
 
 | Day | Lab | What you do | Notebook |
 |---|---|---|---|
@@ -33,11 +65,7 @@ run. Each essentials notebook downloads the data it needs from this repository o
 | 3 | 3b | The same four stages with real models served by Databricks: an embedding model, a model reranker and a document reader for the scanned PDF (Databricks only) | `lab03b_real_models` |
 | 4 | 4 | Build an answer service that cites its sources, break it with fake citations, measure refusals, supported sentences and right facts, and run it as an API | `lab04_rag_api` |
 
-The data is a fictional food delivery company, FreshCart: two refund policies, a partner contract,
-a scanned procedure, a Word table, a slide deck and a spreadsheet, in `data/raw/`. The judged
-questions for Labs 3 and 4 are in `data/golden/`.
-
-## On Databricks
+### Full labs on Databricks
 
 Any workspace with serverless compute works, including the free edition. The first cell of each
 notebook installs what that lab needs, about a minute. In Labs 1 and 2, Python then restarts. That
@@ -49,15 +77,13 @@ is expected.
 2. Click **Create**, then **Git folder**.
 3. Paste `https://github.com/mogupta84/ai-engineer-data-labs` as the Git repository URL and click **Create Git folder**.
 4. Open `databricks/lab01_ingest`, attach **Serverless**, and click **Run all**. The other labs are
-   next to it: `lab02_vector_stores`, `lab03_hybrid`, `lab03b_real_models` and `lab04_rag_api`. The
-   essentials are in `databricks/essentials/`, starting with `lab01_essentials`.
+   next to it: `lab02_vector_stores`, `lab03_hybrid`, `lab03b_real_models` and `lab04_rag_api`.
 
 **Option B: one notebook only.** Click **Import** in your Home folder, choose **URL**, and paste the
 notebook's raw link, for example:
 
 - `https://raw.githubusercontent.com/mogupta84/ai-engineer-data-labs/main/databricks/lab01_ingest.ipynb`
 - `https://raw.githubusercontent.com/mogupta84/ai-engineer-data-labs/main/databricks/lab04_rag_api.ipynb`
-- `https://raw.githubusercontent.com/mogupta84/ai-engineer-data-labs/main/databricks/essentials/lab05_essentials.ipynb`
 
 Its setup cell downloads the code and the data from this repository on the first run.
 
@@ -74,7 +100,7 @@ Steps that behave differently outside class:
   key. If your workspace does not offer them, Lab 3b shows the recorded run from 8 October and Lab 4
   falls back to the offline answer writer for the questions the model could not answer, and says so.
 
-## On Windows
+### Full labs on Windows
 
 1. Install Python 3.11 or newer from [python.org](https://www.python.org/downloads/). In the
    installer, tick **Add python.exe to PATH**.
@@ -106,7 +132,7 @@ only on Databricks. Lab 2, Step 7 prints `skipped`. Labs 3 and 4 run fully offli
 stand-ins for the models: Lab 4's answer writer quotes the best piece of text instead of writing
 in its own words.
 
-## Lab 4 as an API
+### Lab 4 as an API
 
 The Lab 4 notebook proves the logic. As an API, the same answer service takes a question from any
 other program, such as a support screen, a chat window or a nightly test, and returns the answer
@@ -164,7 +190,7 @@ If something goes wrong:
 - Port 8000 is already in use: add `--port 8001` to both the `serve` and the `ask` command.
 - The `/docs` page does not load: use `http`, not `https`, on the same machine; `127.0.0.1` means this machine only.
 
-## How the notebooks work
+### How the full notebooks work
 
 Every step shows you the real thing first. The cell marked `YOUR CALL` is the only one you edit:
 type your prediction or your setting there, then run the next cell to see what really happens. Each
@@ -174,12 +200,14 @@ change anything.
 ## What is in this repository
 
 ```
-databricks/   the notebooks for Databricks: Labs 1, 2, 3, 3b and 4
-notebooks/    the notebooks for your own machine: Labs 1 to 4
+databricks/essentials/  the essentials labs, Labs 1 to 6: start here
+databricks/   the full labs for Databricks: Labs 1, 2, 3, 3b and 4
+notebooks/    the full labs for your own machine: Labs 1 to 4
 labs/         Labs 3 and 4 as command-line programs; lab04_rag_api.py also runs the API
 src/          the lab code the notebooks call
 data/raw/     the seven FreshCart documents
-data/golden/  the judged questions for Labs 3 and 4, and what the two layout tools returned
+data/freshcart.db  the FreshCart orders warehouse, one SQLite file, for Labs 5 and 6
+data/golden/  the judged and test questions for Labs 3 to 6, and what the two layout tools returned
 handouts/     the one-page briefs, the answer sheets and the Lab 2 memo template
 starter/      the labs as plain Python files, with TODOs, for the command line
 solutions/    working versions of the Lab 1 and 2 starter files
