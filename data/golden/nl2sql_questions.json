@@ -1,0 +1,103 @@
+{
+ "about": "Lab 5 and 6 question set. `ref_sql` is the reviewed answer. `trap` names the failure class a model is expected to hit WITHOUT the business definitions. `compare` is `all` (whole result set) or `first_column` (for 'which' questions, where extra columns are fine). Numbers must match to within 0.01 (rounding only).",
+ "questions": [
+  {
+   "id": "N01",
+   "question": "How many orders were placed in May 2024?",
+   "trap": "wrong table",
+   "ref_sql": "SELECT COUNT(*) FROM orders_v2 o JOIN dim_customer c ON c.customer_id = o.customer_id WHERE c.is_internal = 0 AND o.order_date BETWEEN '2024-05-01' AND '2024-05-31'"
+  },
+  {
+   "id": "N02",
+   "question": "How many distinct customers placed an order in April 2024?",
+   "trap": "missing filter",
+   "ref_sql": "SELECT COUNT(DISTINCT o.customer_id) FROM orders_v2 o JOIN dim_customer c ON c.customer_id = o.customer_id WHERE c.is_internal = 0 AND o.order_date BETWEEN '2024-04-01' AND '2024-04-30'"
+  },
+  {
+   "id": "N03",
+   "question": "How many active customers did we have as of 2024-01-15?",
+   "trap": "wrong definition",
+   "ref_sql": "SELECT COUNT(DISTINCT o.customer_id) FROM orders_v2 o JOIN dim_customer c ON c.customer_id = o.customer_id WHERE c.is_internal = 0 AND o.order_date BETWEEN date('2024-01-15', '-90 day') AND '2024-01-15'"
+  },
+  {
+   "id": "N04",
+   "question": "What was total revenue in January 2024?",
+   "trap": "wrong join",
+   "ref_sql": "SELECT SUM(o.order_value) FROM orders_v2 o JOIN dim_customer c ON c.customer_id = o.customer_id WHERE c.is_internal = 0 AND o.status = 'delivered' AND o.order_date BETWEEN '2024-01-01' AND '2024-01-31'"
+  },
+  {
+   "id": "N05",
+   "question": "What was the average value of delivered orders in June 2024?",
+   "trap": "missing filter",
+   "ref_sql": "SELECT AVG(o.order_value) FROM orders_v2 o JOIN dim_customer c ON c.customer_id = o.customer_id WHERE c.is_internal = 0 AND o.status = 'delivered' AND o.order_date BETWEEN '2024-06-01' AND '2024-06-30'"
+  },
+  {
+   "id": "N06",
+   "question": "What was the total lifetime value of all customers in the June 2024 snapshot?",
+   "trap": "wrong grain",
+   "ref_sql": "SELECT SUM(lifetime_value) FROM daily_customer_snapshot WHERE snapshot_date = (SELECT MAX(snapshot_date) FROM daily_customer_snapshot WHERE snapshot_date LIKE '2024-06%')"
+  },
+  {
+   "id": "N07",
+   "question": "How many refund claims were approved in March 2024?",
+   "trap": "other",
+   "ref_sql": "SELECT COUNT(*) FROM fact_refund_claim WHERE status = 'Approved' AND claim_date BETWEEN '2024-03-01' AND '2024-03-31'"
+  },
+  {
+   "id": "N08",
+   "question": "How many orders had at least one refund claim in March 2024?",
+   "trap": "wrong grain",
+   "ref_sql": "SELECT COUNT(DISTINCT order_id) FROM fact_refund_claim WHERE claim_date BETWEEN '2024-03-01' AND '2024-03-31'"
+  },
+  {
+   "id": "N09",
+   "question": "Which city had the highest revenue in Q2 2024?",
+   "trap": "missing filter",
+   "compare": "first_column",
+   "ref_sql": "SELECT c.city, SUM(o.order_value) FROM orders_v2 o JOIN dim_customer c ON c.customer_id = o.customer_id WHERE c.is_internal = 0 AND o.status = 'delivered' AND o.order_date BETWEEN '2024-04-01' AND '2024-06-30' GROUP BY c.city ORDER BY 2 DESC LIMIT 1"
+  },
+  {
+   "id": "N10",
+   "question": "What was the average delivery time in minutes for delivered orders in July 2024?",
+   "trap": "missing filter",
+   "ref_sql": "SELECT AVG(o.delivery_minutes) FROM orders_v2 o JOIN dim_customer c ON c.customer_id = o.customer_id WHERE c.is_internal = 0 AND o.status = 'delivered' AND o.order_date BETWEEN '2024-07-01' AND '2024-07-31'"
+  },
+  {
+   "id": "N11",
+   "question": "How many restaurants serve Biryani cuisine?",
+   "trap": "schema retrieval",
+   "ref_sql": "SELECT COUNT(*) FROM dim_restaurant WHERE cuisine = 'Biryani'"
+  },
+  {
+   "id": "N12",
+   "question": "How many refund claims did customer 57 make in March 2024?",
+   "trap": "none (control question)",
+   "ref_sql": "SELECT COUNT(*) FROM fact_refund_claim WHERE customer_id = 57 AND claim_date BETWEEN '2024-03-01' AND '2024-03-31'"
+  },
+  {
+   "id": "N13",
+   "question": "Which customer made the most refund claims in 2024?",
+   "trap": "missing filter",
+   "compare": "first_column",
+   "ref_sql": "SELECT f.customer_id, COUNT(*) FROM fact_refund_claim f JOIN dim_customer c ON c.customer_id = f.customer_id WHERE c.is_internal = 0 AND f.claim_date LIKE '2024%' GROUP BY f.customer_id ORDER BY 2 DESC LIMIT 1"
+  },
+  {
+   "id": "N14",
+   "question": "What was the total order value lost to cancelled orders in August 2024?",
+   "trap": "missing filter",
+   "ref_sql": "SELECT SUM(o.order_value) FROM orders_v2 o JOIN dim_customer c ON c.customer_id = o.customer_id WHERE c.is_internal = 0 AND o.status = 'cancelled' AND o.order_date BETWEEN '2024-08-01' AND '2024-08-31'"
+  },
+  {
+   "id": "N15",
+   "question": "What was delivered revenue by region in Q3 2024?",
+   "trap": "missing filter",
+   "ref_sql": "SELECT c.region, SUM(o.order_value) FROM orders_v2 o JOIN dim_customer c ON c.customer_id = o.customer_id WHERE c.is_internal = 0 AND o.status = 'delivered' AND o.order_date BETWEEN '2024-07-01' AND '2024-09-30' GROUP BY c.region"
+  },
+  {
+   "id": "N16",
+   "question": "How many orders did we get last month?",
+   "trap": "ambiguous time",
+   "ref_sql": "SELECT COUNT(*) FROM orders_v2 o JOIN dim_customer c ON c.customer_id = o.customer_id WHERE c.is_internal = 0 AND o.order_date BETWEEN '2024-11-01' AND '2024-11-30'"
+  }
+ ]
+}

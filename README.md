@@ -1,7 +1,29 @@
-# AI Engineer (Data): Labs 1 to 4
+# AI Engineer (Data): Labs 1 to 6
 
-The labs from the first four days of the AI Engineer (Data) programme, with their data, so you can
-run them again on your own Databricks workspace or on your own computer.
+The labs of the AI Engineer (Data) programme, with their data, so you can run them again on your own
+Databricks workspace or on your own computer. Each lab comes in up to two versions:
+
+- **Essentials** (`databricks/essentials/`): short, LangChain from start to finish, a comment on
+  every line of code, about 50 minutes each. Labs 1 to 6. From Lab 5 on, this is the only version.
+- **Full** (`databricks/` and `notebooks/`): the longer class labs for Days 1 to 4, built on the
+  course's own code, with more measurements and a write-up.
+
+## The essentials labs (Databricks)
+
+| Day | Lab | What you do | Notebook |
+|---|---|---|---|
+| 1 | 1 | Load seven files in four formats with LangChain, find the problems no error message shows, cut them into pieces and search them by meaning | `lab01_essentials` |
+| 2 | 2 | Put the same pieces into Chroma, Qdrant and FAISS, compare their scores and recall, and see why filtering after the search loses results | `lab02_essentials` |
+| 3 | 3 | Add keyword search, rank merging, a reranker and a recency filter one at a time, and score each stage on 20 judged questions with nDCG@10 | `lab03_essentials` |
+| 4 | 4 | Build an answer service with a real model that cites its sources, catch fake citations in code, and measure refusals and right facts | `lab04_essentials` |
+| 5 | 5 | Give a model three tools (document search, an official business number, SQL), watch which it picks, break it three ways, and serve two tools from an MCP server | `lab05_essentials` |
+| 6 | 6 | Let a model write SQL, find the numbers that are wrong with no error, add business rules and worked examples, and replace free SQL with a semantic layer, a sentence and a chart | `lab06_essentials` |
+
+Run them in order: each one builds on the last. Labs 4, 5 and 6 call
+`databricks-meta-llama-3-3-70b-instruct`, a model Databricks serves, billed per use: a few cents a
+run. Each essentials notebook downloads the data it needs from this repository on its first run.
+
+## The full labs (Days 1 to 4)
 
 | Day | Lab | What you do | Notebook |
 |---|---|---|---|
@@ -27,13 +49,15 @@ is expected.
 2. Click **Create**, then **Git folder**.
 3. Paste `https://github.com/mogupta84/ai-engineer-data-labs` as the Git repository URL and click **Create Git folder**.
 4. Open `databricks/lab01_ingest`, attach **Serverless**, and click **Run all**. The other labs are
-   next to it: `lab02_vector_stores`, `lab03_hybrid`, `lab03b_real_models` and `lab04_rag_api`.
+   next to it: `lab02_vector_stores`, `lab03_hybrid`, `lab03b_real_models` and `lab04_rag_api`. The
+   essentials are in `databricks/essentials/`, starting with `lab01_essentials`.
 
 **Option B: one notebook only.** Click **Import** in your Home folder, choose **URL**, and paste the
 notebook's raw link, for example:
 
 - `https://raw.githubusercontent.com/mogupta84/ai-engineer-data-labs/main/databricks/lab01_ingest.ipynb`
 - `https://raw.githubusercontent.com/mogupta84/ai-engineer-data-labs/main/databricks/lab04_rag_api.ipynb`
+- `https://raw.githubusercontent.com/mogupta84/ai-engineer-data-labs/main/databricks/essentials/lab05_essentials.ipynb`
 
 Its setup cell downloads the code and the data from this repository on the first run.
 
