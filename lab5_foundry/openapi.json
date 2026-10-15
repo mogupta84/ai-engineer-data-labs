@@ -1,0 +1,63 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "FreshCart metrics",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://YOUR-APP-ADDRESS/api"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "functionKey": {
+        "type": "apiKey",
+        "name": "x-functions-key",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "functionKey": []
+    }
+  ],
+  "paths": {
+    "/get_metric": {
+      "get": {
+        "operationId": "get_metric_openapi",
+        "description": "OpenAPI version of the FreshCart metrics lookup. Return one official FreshCart business number for one month of 2024. Use this for revenue, order counts and refund claim counts. Test accounts are always excluded; revenue counts delivered orders only.",
+        "parameters": [
+          {
+            "name": "metric",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "revenue",
+                "order_count",
+                "refund_claims"
+              ]
+            }
+          },
+          {
+            "name": "month",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "YYYY-MM, from 2024-01 to 2024-12"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The number, or ok false with a message"
+          }
+        }
+      }
+    }
+  }
+}

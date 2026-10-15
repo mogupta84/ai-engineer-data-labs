@@ -210,6 +210,7 @@ labs/         Labs 3 and 4 as command-line programs; lab04_rag_api.py also runs 
 src/          the lab code the notebooks call
 data/raw/     the seven FreshCart documents
 data/freshcart.db  the FreshCart orders warehouse, one SQLite file, for Labs 5 and 6
+lab5_foundry/  Lab 5 on Microsoft Foundry: the function behind the OpenAPI and MCP tools, and its handbook
 data/golden/  the judged and test questions for Labs 3 to 6, and what the two layout tools returned
 handouts/     the one-page briefs, the answer sheets and the Lab 2 memo template
 starter/      the labs as plain Python files, with TODOs, for the command line
