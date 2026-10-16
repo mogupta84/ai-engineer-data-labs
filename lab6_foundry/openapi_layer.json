@@ -1,0 +1,79 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "FreshCart official numbers",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://YOUR-APP-ADDRESS/api"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "functionKey": {
+        "type": "apiKey",
+        "name": "x-functions-key",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "functionKey": []
+    }
+  ],
+  "paths": {
+    "/official_number": {
+      "get": {
+        "operationId": "get_official_number",
+        "description": "The semantic layer for the FreshCart mini warehouse. Return one official business number for a period of 2024, optionally split by city, region or month. Test accounts are always excluded; revenue counts delivered orders only; refund rate means refund claims per order.",
+        "parameters": [
+          {
+            "name": "metric",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "revenue",
+                "order_count",
+                "refund_claims",
+                "refund_rate"
+              ]
+            }
+          },
+          {
+            "name": "period",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "YYYY-MM (a month), YYYY-Qn (a quarter) or YYYY (the whole year), within 2024"
+          },
+          {
+            "name": "breakdown",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "none",
+                "city",
+                "region",
+                "month"
+              ]
+            },
+            "description": "Split the number by this; leave out for one number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The number or rows, or ok false with a message"
+          }
+        }
+      }
+    }
+  }
+}

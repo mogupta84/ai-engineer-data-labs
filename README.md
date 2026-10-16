@@ -212,6 +212,7 @@ data/raw/     the seven FreshCart documents
 data/freshcart.db  the FreshCart orders warehouse, one SQLite file, for Labs 5 and 6
 presentations/  the slide decks as PDF: Week 1 (Days 1 and 2), Week 2 (Days 3 and 4), Week 3 (Days 5 and 6)
 lab5_foundry/  Lab 5 on Microsoft Foundry: the function behind the OpenAPI and MCP tools, and its handbook
+lab6_foundry/  Lab 6 on Microsoft Foundry: questions in English to SQL, the semantic layer, and its handbook
 data/golden/  the judged and test questions for Labs 3 to 6, and what the two layout tools returned
 handouts/     the one-page briefs, the answer sheets and the Lab 2 memo template
 starter/      the labs as plain Python files, with TODOs, for the command line

@@ -1,0 +1,58 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "FreshCart SQL",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://YOUR-APP-ADDRESS/api"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "functionKey": {
+        "type": "apiKey",
+        "name": "x-functions-key",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "functionKey": []
+    }
+  ],
+  "paths": {
+    "/run_sql": {
+      "post": {
+        "operationId": "run_sql",
+        "description": "Run one read-only SELECT on the FreshCart mini warehouse, an Azure SQL database (T-SQL), and return up to 50 rows.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "sql"
+                ],
+                "properties": {
+                  "sql": {
+                    "type": "string",
+                    "description": "one T-SQL SELECT statement"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The rows, or ok false with a message"
+          }
+        }
+      }
+    }
+  }
+}
