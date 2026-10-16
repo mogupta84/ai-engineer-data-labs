@@ -27,7 +27,7 @@
     "/get_metric": {
       "get": {
         "operationId": "get_metric_openapi",
-        "description": "OpenAPI version of the FreshCart metrics lookup. Return one official FreshCart business number for one month of 2024. Use this for revenue, order counts and refund claim counts. Test accounts are always excluded; revenue counts delivered orders only.",
+        "description": "OpenAPI version of the FreshCart metrics lookup: the semantic layer. Return one official FreshCart business number for a period of 2024, optionally split by city, region or month. Use this for revenue, order counts, refund claim counts and the refund rate. Test accounts are always excluded; revenue counts delivered orders only; refund rate means claims per order.",
         "parameters": [
           {
             "name": "metric",
@@ -38,7 +38,8 @@
               "enum": [
                 "revenue",
                 "order_count",
-                "refund_claims"
+                "refund_claims",
+                "refund_rate"
               ]
             }
           },
@@ -49,7 +50,22 @@
             "schema": {
               "type": "string"
             },
-            "description": "YYYY-MM, from 2024-01 to 2024-12"
+            "description": "The period: YYYY-MM (a month), YYYY-Qn (a quarter) or YYYY (the whole year), within 2024"
+          },
+          {
+            "name": "breakdown",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "none",
+                "city",
+                "region",
+                "month"
+              ]
+            },
+            "description": "Split the number by this; leave out for one number"
           }
         ],
         "responses": {
