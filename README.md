@@ -6,6 +6,11 @@ Databricks workspace. **Start with the essentials labs.** They are the course la
 New here? Read the **[onboarding guide to Labs 1 to 6](AI_Engineer_Data_Onboarding_Guide_Labs_1-6.pdf)**
 (PDF, 6 pages): how to get the labs, how to run them, and what each lab teaches.
 
+The **[training plan](training_plan/AI_Engineer_Data_Training_Plan.pdf)** (PDF, 11 pages; also as an
+[Excel file](training_plan/AI_Engineer_Data_Training_Plan.xlsx)) shows all 12 sessions: the topic and lab
+for each day, the three assignments with their scoring, the case studies, how learning is checked, the
+pre-reads and the lab data.
+
 ## Start here: the essentials labs
 
 Six short labs, about 50 minutes each, in `databricks/essentials/`. Each one uses LangChain from start
