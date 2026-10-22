@@ -6,6 +6,7 @@ Lab 7 has its own database (freshcart_lab7) and its own Function App, deployed f
 ```
 function_app.py           the tools: customer_claims, official_number, restaurant_orders, and three practice
                           actions for the recall (refund, escalate, email) that only return a receipt
+                          customer_claims and official_number also answer as MCP tools, for Lab 8 Part D
 openapi_lab7.json         the tools' description to paste into Foundry; replace YOUR-APP-ADDRESS first
 openapi_lab7_recall.json  the same plus the recall tools, for RecallAgent only (Parts B and C)
 refund_policy_v3_2024.pdf the refund policy, for File search

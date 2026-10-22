@@ -366,3 +366,56 @@ def send_email_http(req: func.HttpRequest) -> func.HttpResponse:
 def official_number_http(req: func.HttpRequest) -> func.HttpResponse:
     return safely(lambda: official_number(req.params.get("metric"), req.params.get("period"),
                                           req.params.get("breakdown")))
+
+
+# The same two lookups as MCP tools, for Copilot Studio, which adds tools of your own as an MCP server.
+# The app's MCP server address is https://<app address>/runtime/webhooks/mcp; it needs the app's mcp_extension key.
+def as_text(work):
+    """Run one MCP tool call and return the answer as JSON text; any failure comes back as ok false."""
+    return safely(work).get_body().decode()
+
+
+def arguments_of(context):
+    """What the agent sent, as a dict, whatever shape the call arrived in."""
+    return json.loads(context).get("arguments") or {}
+
+
+CLAIMS_DESCRIPTION = (
+    "The facts about one FreshCart customer on a given day of 2024: name, city, status, whether it is a test account, "
+    "their refund claims made on or before that day (most recent first, at most 20), and how many claims they made in "
+    "the 30 days ending on that day, whatever each claim's status. Give order_id to also check that order: whether it "
+    "belongs to this customer (another customer's order shows no details), its date, value and status, the whole days "
+    "from the order date to that day, and whether that is within 48 hours (yes, no, or cannot tell, because order "
+    "dates have no time of day).")
+
+
+@app.generic_trigger(
+    arg_name="context", type="mcpToolTrigger", toolName="get_customer_claims", description=CLAIMS_DESCRIPTION,
+    toolProperties=json.dumps([
+        {"propertyName": "customer_id", "propertyType": "string", "description": "The customer's number, for example 57"},
+        {"propertyName": "as_of", "propertyType": "string",
+         "description": "The day the customer is asking, written YYYY-MM-DD, within 2024"},
+        {"propertyName": "order_id", "propertyType": "string",
+         "description": "The order the customer is asking about; leave out if there is none"},
+    ]))
+def customer_claims_mcp(context) -> str:
+    return as_text(lambda: (lambda a: customer_claims(a.get("customer_id"), a.get("as_of"), a.get("order_id")))(
+        arguments_of(context)))
+
+
+@app.generic_trigger(
+    arg_name="context", type="mcpToolTrigger", toolName="get_official_number",
+    description="The semantic layer for the FreshCart warehouse. Return one official business number for a period of "
+                "2024, optionally split by city, region or month. Test accounts are always excluded; revenue counts "
+                "delivered orders only; refund rate means refund claims per order.",
+    toolProperties=json.dumps([
+        {"propertyName": "metric", "propertyType": "string",
+         "description": "revenue, order_count, refund_claims or refund_rate"},
+        {"propertyName": "period", "propertyType": "string",
+         "description": "YYYY-MM (a month), YYYY-Qn (a quarter) or YYYY (the whole year), within 2024"},
+        {"propertyName": "breakdown", "propertyType": "string",
+         "description": "none, city, region or month; leave out for one number"},
+    ]))
+def official_number_mcp(context) -> str:
+    return as_text(lambda: (lambda a: official_number(a.get("metric"), a.get("period"), a.get("breakdown")))(
+        arguments_of(context)))
