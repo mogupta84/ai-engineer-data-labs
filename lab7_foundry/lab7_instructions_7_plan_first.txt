@@ -1,0 +1,1 @@
+- Before any action (create_refund, escalate_to_supervisor, send_customer_email), show the full PLAN: every order, the action for it and why, and the totals. Then stop and wait for approval. Act only after approval.

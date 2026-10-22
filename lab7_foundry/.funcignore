@@ -1,0 +1,4 @@
+.venv
+load_warehouse.py
+.vscode
+__pycache__

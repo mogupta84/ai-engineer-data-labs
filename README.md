@@ -215,9 +215,11 @@ labs/         Labs 3 and 4 as command-line programs; lab04_rag_api.py also runs 
 src/          the lab code the notebooks call
 data/raw/     the seven FreshCart documents
 data/freshcart.db  the FreshCart orders warehouse, one SQLite file, for Labs 5 and 6
-presentations/  the slide decks as PDF: Week 1 (Days 1 and 2), Week 2 (Days 3 and 4), Week 3 (Days 5 and 6)
+presentations/  the slide decks as PDF: Week 1 (Days 1 and 2), Week 2 (Days 3 and 4), Week 3 (Days 5 and 6), Week 4 (Day 7)
 lab5_foundry/  Lab 5 on Microsoft Foundry: the function behind the OpenAPI and MCP tools, and its handbook
 lab6_foundry/  Lab 6 on Microsoft Foundry: questions in English to SQL, the semantic layer, and its handbook
+lab7_foundry/  Lab 7 on Microsoft Foundry: a first enterprise agent, with tools, a plan, memory and a skill
+training_plan/  the training plan for all 12 sessions, as PDF and Excel
 data/golden/  the judged and test questions for Labs 3 to 6, and what the two layout tools returned
 handouts/     the one-page briefs, the answer sheets and the Lab 2 memo template
 starter/      the labs as plain Python files, with TODOs, for the command line

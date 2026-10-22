@@ -1,0 +1,271 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "FreshCart support tools",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://YOUR-APP-ADDRESS/api"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "functionKey": {
+        "type": "apiKey",
+        "name": "x-functions-key",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "functionKey": []
+    }
+  ],
+  "paths": {
+    "/customer_claims": {
+      "get": {
+        "operationId": "get_customer_claims",
+        "description": "The facts about one FreshCart customer on a given day of 2024: name, city, status, whether it is a test account, their refund claims made on or before that day (most recent first, at most 20), and how many claims they made in the 30 days ending on that day, whatever each claim's status. Give order_id to also check that order: whether it belongs to this customer (another customer's order shows no details), its date, value and status, the whole days from the order date to that day, and whether that is within 48 hours (yes, no, or cannot tell, because order dates have no time of day).",
+        "parameters": [
+          {
+            "name": "customer_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The customer's number, for example 57"
+          },
+          {
+            "name": "as_of",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The day the customer is asking, written YYYY-MM-DD, within 2024"
+          },
+          {
+            "name": "order_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The order the customer is asking about; leave out if there is none"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The customer's facts, or ok false with a message"
+          }
+        }
+      }
+    },
+    "/official_number": {
+      "get": {
+        "operationId": "get_official_number",
+        "description": "The semantic layer for the FreshCart warehouse. Return one official business number for a period of 2024, optionally split by city, region or month. Test accounts are always excluded; revenue counts delivered orders only; refund rate means refund claims per order.",
+        "parameters": [
+          {
+            "name": "metric",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "revenue",
+                "order_count",
+                "refund_claims",
+                "refund_rate"
+              ]
+            }
+          },
+          {
+            "name": "period",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "YYYY-MM (a month), YYYY-Qn (a quarter) or YYYY (the whole year), within 2024"
+          },
+          {
+            "name": "breakdown",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "none",
+                "city",
+                "region",
+                "month"
+              ]
+            },
+            "description": "Split the number by this; leave out for one number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The number or rows, or ok false with a message"
+          }
+        }
+      }
+    },
+    "/restaurant_orders": {
+      "get": {
+        "operationId": "get_restaurant_orders",
+        "description": "Every order of one FreshCart restaurant between two days of 2024 (at most 31 days): order_id, customer_id, order_date, order_value and status (delivered or cancelled). It says nothing about test accounts or refund claims: use get_customer_claims for that, one customer at a time.",
+        "parameters": [
+          {
+            "name": "restaurant_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The restaurant's number, for example 27"
+          },
+          {
+            "name": "first_day",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The first day, written YYYY-MM-DD"
+          },
+          {
+            "name": "last_day",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The last day, written YYYY-MM-DD"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The answer as JSON; ok is false with a message when the action cannot go ahead"
+          }
+        }
+      }
+    },
+    "/create_refund": {
+      "post": {
+        "operationId": "create_refund",
+        "description": "Refund one order to the customer's original payment method. A practice action for the lab: it checks the order and amount and returns a refund_id, but no money moves. Each refund counts as a refund claim under the refund policy.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "order_id": {
+                    "type": "integer"
+                  },
+                  "customer_id": {
+                    "type": "integer"
+                  },
+                  "amount": {
+                    "type": "number",
+                    "description": "At most the order value"
+                  },
+                  "reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "order_id",
+                  "customer_id",
+                  "amount"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The answer as JSON; ok is false with a message when the action cannot go ahead"
+          }
+        }
+      }
+    },
+    "/escalate": {
+      "post": {
+        "operationId": "escalate_to_supervisor",
+        "description": "Send one order to a support supervisor for manual review instead of refunding it. A practice action: returns a ticket_id, nothing is saved.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "order_id": {
+                    "type": "integer"
+                  },
+                  "customer_id": {
+                    "type": "integer"
+                  },
+                  "reason": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "order_id",
+                  "customer_id",
+                  "reason"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The answer as JSON; ok is false with a message when the action cannot go ahead"
+          }
+        }
+      }
+    },
+    "/send_email": {
+      "post": {
+        "operationId": "send_customer_email",
+        "description": "Email one customer. A practice action: returns an email_id, nothing is sent.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "customer_id": {
+                    "type": "integer"
+                  },
+                  "message": {
+                    "type": "string",
+                    "description": "The email text, at most 2000 characters"
+                  }
+                },
+                "required": [
+                  "customer_id",
+                  "message"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The answer as JSON; ok is false with a message when the action cannot go ahead"
+          }
+        }
+      }
+    }
+  }
+}

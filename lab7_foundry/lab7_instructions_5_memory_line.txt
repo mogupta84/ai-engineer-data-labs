@@ -1,0 +1,1 @@
+Memory: use memory only for how a customer likes to be contacted, such as language or channel. Never use memory for a fact about a claim, an order or a refund: get those from get_customer_claims every time.

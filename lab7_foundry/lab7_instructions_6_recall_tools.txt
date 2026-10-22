@@ -1,0 +1,2 @@
+- freshcart_lab7, get_restaurant_orders: one restaurant's orders over up to 31 days. It says nothing about test accounts or claims.
+- freshcart_lab7, create_refund, escalate_to_supervisor and send_customer_email: actions. Each refund counts as a refund claim under the refund policy.

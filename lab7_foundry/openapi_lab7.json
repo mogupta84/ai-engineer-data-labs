@@ -1,0 +1,119 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "FreshCart support tools",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://YOUR-APP-ADDRESS/api"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "functionKey": {
+        "type": "apiKey",
+        "name": "x-functions-key",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "functionKey": []
+    }
+  ],
+  "paths": {
+    "/customer_claims": {
+      "get": {
+        "operationId": "get_customer_claims",
+        "description": "The facts about one FreshCart customer on a given day of 2024: name, city, status, whether it is a test account, their refund claims made on or before that day (most recent first, at most 20), and how many claims they made in the 30 days ending on that day, whatever each claim's status. Give order_id to also check that order: whether it belongs to this customer (another customer's order shows no details), its date, value and status, the whole days from the order date to that day, and whether that is within 48 hours (yes, no, or cannot tell, because order dates have no time of day).",
+        "parameters": [
+          {
+            "name": "customer_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The customer's number, for example 57"
+          },
+          {
+            "name": "as_of",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The day the customer is asking, written YYYY-MM-DD, within 2024"
+          },
+          {
+            "name": "order_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The order the customer is asking about; leave out if there is none"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The customer's facts, or ok false with a message"
+          }
+        }
+      }
+    },
+    "/official_number": {
+      "get": {
+        "operationId": "get_official_number",
+        "description": "The semantic layer for the FreshCart warehouse. Return one official business number for a period of 2024, optionally split by city, region or month. Test accounts are always excluded; revenue counts delivered orders only; refund rate means refund claims per order.",
+        "parameters": [
+          {
+            "name": "metric",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "revenue",
+                "order_count",
+                "refund_claims",
+                "refund_rate"
+              ]
+            }
+          },
+          {
+            "name": "period",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "YYYY-MM (a month), YYYY-Qn (a quarter) or YYYY (the whole year), within 2024"
+          },
+          {
+            "name": "breakdown",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "none",
+                "city",
+                "region",
+                "month"
+              ]
+            },
+            "description": "Split the number by this; leave out for one number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The number or rows, or ok false with a message"
+          }
+        }
+      }
+    }
+  }
+}
