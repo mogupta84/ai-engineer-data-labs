@@ -3,7 +3,9 @@ import asyncio        # Agent Framework agents run asynchronously
 import os             # read the project address from an environment variable
 import sys            # read the command-line options
 import json           # save every answer, so it can be re-scored without asking again
+import base64         # read your account name from your sign-in token
 import time           # time each answer
+import pathlib        # name the answers file after the step you ran
 
 from azure.identity import AzureCliCredential          # sign in as you: the account signed in to Azure CLI
 from agent_framework.foundry import FoundryChatClient  # Agent Framework's client for models in a Foundry project
@@ -23,8 +25,18 @@ def make_client():
     """A chat client for the class Foundry project, signed in as you. No key."""
     endpoint = os.environ.get("FOUNDRY_PROJECT_ENDPOINT")   # your trainer gives you this address
     if not endpoint:
-        sys.exit("Set FOUNDRY_PROJECT_ENDPOINT first: export FOUNDRY_PROJECT_ENDPOINT=<the address your trainer gives you>")
+        sys.exit("Set FOUNDRY_PROJECT_ENDPOINT first: export FOUNDRY_PROJECT_ENDPOINT=<the address your trainer gives you> "
+                 "(Windows PowerShell: $env:FOUNDRY_PROJECT_ENDPOINT=\"<address>\")")
     return FoundryChatClient(project_endpoint=endpoint, model=MODEL, credential=AzureCliCredential())
+
+
+def who_am_i():
+    """The class account you signed in with (az login), read from your sign-in token. Used to keep your memories
+    apart from your classmates', even when every VM has the same login name."""
+    token = AzureCliCredential().get_token("https://management.azure.com/.default").token
+    claims = token.split(".")[1]                                          # the middle part of the token says who you are
+    claims = json.loads(base64.urlsafe_b64decode(claims + "=" * (-len(claims) % 4)))
+    return claims.get("upn") or claims.get("unique_name") or claims["oid"]
 
 
 def tool_calls(response):
@@ -64,7 +76,8 @@ async def run_cases(agent, runs=1, only=None, show=True):
             if show:
                 print(f"    {last}")
     print(f"\nScore: {right} of {total} answers right")
-    with open(f"answers_{agent.name}.json", "w") as file:      # e.g. answers_SupportAgent.json
+    script = pathlib.Path(sys.argv[0]).stem                     # the step you ran, e.g. step1_agent
+    with open(f"answers_{script}.json", "w") as file:           # e.g. answers_step1_agent.json, one file per step
         json.dump(log, file, indent=1)
     return right, total
 

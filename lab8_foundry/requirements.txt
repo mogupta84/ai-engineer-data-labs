@@ -2,3 +2,4 @@ agent-framework==1.22.0
 agent-framework-foundry==1.15.0
 azure-identity
 mssql-python
+azure-monitor-opentelemetry==1.8.11

@@ -1,8 +1,8 @@
-"""Lab 8, Part A: a data agent in code. The same support job as Lab 7, now in Microsoft Agent Framework.
+"""Lab 8, step 1: build the support agent. The Lab 7 support job, now an agent you write in code.
 
-    python lab8_1_agent.py                  ask the 9 cases once and score them
-    python lab8_1_agent.py --runs 3         three times each
-    python lab8_1_agent.py --ask "..."      ask your own question
+    python step1_agent.py                  ask the 9 cases once and score them
+    python step1_agent.py --runs 3         three times each
+    python step1_agent.py --ask "..."      ask your own question
 """
 import asyncio                                   # run the agent
 
@@ -11,6 +11,7 @@ from agent_framework import Agent                # an agent: a model, instructio
 from freshcart_tools import TOOLS                # plain Python functions over the warehouse
 from lab8_common import make_client, ask, run_cases, options
 
+# The agent's instructions: Lab 7's rules, word for word.
 INSTRUCTIONS = """You are FreshCart's support agent. You help support staff decide refund requests.
 Use read_refund_policy for every rule and quote its section number. Use get_customer_claims for every fact about a
 customer or an order, on the day in the request; if there is no date, ask for it and decide nothing. Trust its numbers,
@@ -23,11 +24,13 @@ For more than one order, one DECISION line per order."""
 
 async def main():
     runs, only, question = options()
-    agent = Agent(make_client(), INSTRUCTIONS, name="SupportAgent", tools=TOOLS)   # the agent decides which tools to call
+    # The agent itself: a model client, the instructions, a name and the tools it may call. That is all.
+    agent = Agent(make_client(), INSTRUCTIONS, name="SupportAgent", tools=TOOLS)
     if question:
         answer, calls, seconds = await ask(agent, question)
         print(answer, f"\n\ntools called: {calls}, {seconds}s")
     else:
         await run_cases(agent, runs, only)
 
-asyncio.run(main())
+if __name__ == "__main__":                       # run only when started, not when another step imports it
+    asyncio.run(main())

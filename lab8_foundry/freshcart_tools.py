@@ -1,7 +1,7 @@
 """Lab 8: the FreshCart tools, as plain Python functions an Agent Framework agent can call.
 
 They read the Lab 7 warehouse, the Azure SQL database freshcart_lab7, with YOUR OWN sign-in (the class account
-signed in to Cloud Shell behind VS Code for the Web), so there is no password and no key anywhere. Your account
+signed in with az login on your VM, or Cloud Shell in VS Code for the Web), so there is no password and no key anywhere. Your account
 may only read. The business rules that must never go wrong (the 30-day count, the 48-hour check, test accounts,
 another customer's order) are done here, in code, as in Lab 7's Function App.
 """

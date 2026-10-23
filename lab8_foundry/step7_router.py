@@ -1,11 +1,12 @@
-"""Lab 8, Part C: a router pipeline, Day 7's router pattern in code (Agent Framework calls a pipeline a workflow).
-A triage agent reads each request and the pipeline sends it down one branch:
+"""Lab 8, step 7: from a sequence to a router, Day 7's router pattern in code. Step 6 sent every request down
+every step, so a manager's question got a customer email. Here a triage agent reads each request first and the
+workflow sends it down one branch only:
 REFUND to the refund desk (the skill agent, which can ask Replywriter, another agent, to draft the email),
 NUMBER to the numbers desk (one tool only), PERSON to a support person (no model at all).
 
-    python lab8_3_flow.py                 run the cases through the pipeline and score route and answer
-    python lab8_3_flow.py --ask "..."     send your own request through the pipeline
-    python lab8_3_flow.py --fixed         the same, with the four fixes from the handbook switched on
+    python step7_router.py                 run the cases through the pipeline and score route and answer
+    python step7_router.py --ask "..."     send your own request through the pipeline
+    python step7_router.py --fixed         the same, with the four fixes from the handbook switched on
 """
 import asyncio                                       # run the workflow
 import json                                          # save every answer
@@ -13,7 +14,7 @@ import sys                                           # read --fixed
 import pathlib                                       # find the skills folder
 import re                                            # look for a date in the request
 from dataclasses import dataclass                    # a small message that carries the route and the request
-from typing import Never                             # a desk sends no message onward
+from typing_extensions import Never                 # a desk sends no message onward
 
 from agent_framework import (Agent, Executor, handler, WorkflowContext, WorkflowBuilder, Case, Default,
                              SkillsProvider, FileSkillsSource)
@@ -71,7 +72,7 @@ class Desk(Executor):
         await ctx.yield_output({"route": item.route, "answer": response.text, "tools": tool_calls(response)})
 
 
-# The four fixes. Part C asks you to find the problems first, then switch these on with --fixed. Three are one
+# The four fixes. Step 7 asks you to find the problems first, then switch these on with --fixed. Three are one
 # sentence in an agent's instructions; the date fix is a check in code, because a sentence did not hold (see below).
 FIX_TRIAGE = (" A request about a delivery that went wrong (missing, spilled, damaged, late or wrong items) is REFUND "
               "even if it does not say the word refund.")
@@ -159,4 +160,5 @@ async def main():
     with open("answers_flow_fixed.json" if "--fixed" in sys.argv else "answers_flow.json", "w") as file:
         json.dump(log, file, indent=1)
 
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
