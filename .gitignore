@@ -7,4 +7,5 @@ data/cache/
 data/logs/
 data/pipeline/
 lab.env
+.env
 .DS_Store

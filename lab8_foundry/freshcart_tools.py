@@ -1,7 +1,7 @@
 """Lab 8: the FreshCart tools, as plain Python functions an Agent Framework agent can call.
 
 They read the Lab 7 warehouse, the Azure SQL database freshcart_lab7, with YOUR OWN sign-in (the class account
-signed in with az login on your VM, or Cloud Shell in VS Code for the Web), so there is no password and no key anywhere. Your account
+signed in with az login or VS Code's Sign in to Azure on your VM, or Cloud Shell in VS Code for the Web), so there is no password and no key anywhere. Your account
 may only read. The business rules that must never go wrong (the 30-day count, the 48-hour check, test accounts,
 another customer's order) are done here, in code, as in Lab 7's Function App.
 """
@@ -16,25 +16,42 @@ from typing import Annotated   # lets each parameter carry a description the mod
 
 import mssql_python    # Microsoft's SQL Server driver for Python
 
+from lab8_common import SIGN_IN   # sign in as you: az login or VS Code's Sign in to Azure
+
 SERVER = "freshcart-mini-sql.database.windows.net"   # the class SQL server
 DATABASE = "freshcart_lab7"                          # Lab 7's own warehouse
 WAREHOUSE = (f"Server=tcp:{SERVER},1433;Database={DATABASE};"
-             "Authentication=ActiveDirectoryDefault;Encrypt=yes;TrustServerCertificate=no")   # sign in as you
+             "Encrypt=yes;TrustServerCertificate=no")   # no password: SIGN_IN below hands the driver your token
 TIME_LIMIT = 30                                      # seconds the driver may wait before it gives up
 WINDOW_DAYS = 30                                     # the policy's rolling period for counting claims
 POLICY = pathlib.Path(__file__).parent / "skills" / "refund-decision" / "references" / "refund_policy.md"
 WAKING = ("timeout", "unable to establish connection", "not currently available", "40613")   # signs it is asleep
 
 
+class _KeptToken:
+    """Hands the database driver your sign-in token, kept until 5 minutes before it runs out. The driver asks on
+    every connection, and each tool call connects once; without this, every call would sign in again."""
+    def __init__(self, credential):
+        self.credential, self.token = credential, None
+
+    def get_token(self, scope):
+        if self.token is None or self.token.expires_on - time.time() < 300:
+            self.token = self.credential.get_token(scope)
+        return self.token
+
+
+DB_SIGN_IN = _KeptToken(SIGN_IN)
+
+
 def _connect():
     """Open a connection, waiting once if the database was paused (it pauses after an hour unused)."""
     try:
-        return mssql_python.connect(WAREHOUSE, timeout=TIME_LIMIT)
+        return mssql_python.connect(WAREHOUSE, timeout=TIME_LIMIT, token_provider=DB_SIGN_IN)
     except mssql_python.Error as error:
         if not any(sign in str(error).lower() for sign in WAKING):   # a real error, not a sleeping database
             raise
         time.sleep(20)                                               # give the paused database time to start
-        return mssql_python.connect(WAREHOUSE, timeout=TIME_LIMIT)
+        return mssql_python.connect(WAREHOUSE, timeout=TIME_LIMIT, token_provider=DB_SIGN_IN)
 
 
 def _plain(value):

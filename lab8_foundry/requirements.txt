@@ -1,5 +1,6 @@
 agent-framework==1.22.0
 agent-framework-foundry==1.15.0
-azure-identity
-mssql-python
+azure-identity==1.26.0
+mssql-python==1.16.0
 azure-monitor-opentelemetry==1.8.11
+azure-identity-broker==1.3.0

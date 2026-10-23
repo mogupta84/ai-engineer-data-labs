@@ -1,7 +1,7 @@
 # Lab 8: an AI data agent in code, with Microsoft Agent Framework
 
 Start with the handbook, **[Foundry_Lab8_agent_in_code.pdf](Foundry_Lab8_agent_in_code.pdf)**.
-Run it in VS Code on your class VM, signed in with az login; VS Code for the Web, opened from Microsoft Foundry, is the backup. No keys.
+Run it in VS Code on your class VM, signed in with VS Code's Sign in to Azure or with az login; VS Code for the Web, opened from Microsoft Foundry, is the backup. No keys.
 
 ```
 my_agent.py               step 1: YOUR agent; fill in the two gaps

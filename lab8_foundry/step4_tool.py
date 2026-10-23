@@ -15,10 +15,9 @@ from typing import Annotated                     # describe each parameter for t
 
 from agent_framework import Agent, function_middleware
 from agent_framework.foundry import FoundryMemoryProvider    # long-term memory, kept in a Foundry memory store
-from azure.identity.aio import AzureCliCredential           # sign in as you, as the model client does
 
 from freshcart_tools import TOOLS, get_official_number
-from lab8_common import make_client, ask, run_cases, options, who_am_i, TIME_LIMIT
+from lab8_common import make_client, ask, run_cases, options, who_am_i, async_sign_in, TIME_LIMIT
 
 # The agent's instructions: Lab 7's rules, plus one line for the new tool (the last one).
 INSTRUCTIONS = """You are FreshCart's support agent. You help support staff decide refund requests.
@@ -100,7 +99,7 @@ async def main():
         you = who_am_i()                         # your class account, so your memories stay yours
         scope = re.sub(r"[^A-Za-z0-9_-]", "_", you)   # a scope allows only letters, digits, - and _: no @ or dots
         logging.getLogger("agent_framework_foundry").addHandler(logging.StreamHandler())   # show memory errors here
-        async with AzureCliCredential() as credential, FoundryMemoryProvider(
+        async with async_sign_in() as credential, FoundryMemoryProvider(
                 project_endpoint=os.environ["FOUNDRY_PROJECT_ENDPOINT"], credential=credential,
                 memory_store_name=MEMORY_STORE, scope=scope, update_delay=0) as memory:
             try:                                 # a missing store fails quietly later, so check it now

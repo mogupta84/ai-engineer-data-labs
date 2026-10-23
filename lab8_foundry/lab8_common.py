@@ -7,10 +7,32 @@ import base64         # read your account name from your sign-in token
 import time           # time each answer
 import pathlib        # name the answers file after the step you ran
 
-from azure.identity import AzureCliCredential          # sign in as you: the account signed in to Azure CLI
+from azure.identity import AzureCliCredential, VisualStudioCodeCredential, ChainedTokenCredential
+from azure.identity import aio                           # the same sign-ins, for code that runs asynchronously
 from agent_framework.foundry import FoundryChatClient  # Agent Framework's client for models in a Foundry project
 
 from cases import CASES, is_right                      # the 9 cases and their right answers
+
+# The project address. Set it in the terminal, or once in a file named .env in this folder, one line:
+# FOUNDRY_PROJECT_ENDPOINT=<the address your trainer gives you>. A line set in the terminal wins.
+ENV_FILE = pathlib.Path(__file__).parent / ".env"
+if not ENV_FILE.exists() and ENV_FILE.with_name(".env.txt").exists():
+    sys.exit("Your address file is called .env.txt; rename it to .env (Windows added .txt when saving it).")
+if ENV_FILE.exists():
+    for line in ENV_FILE.read_text(encoding="utf-8-sig").splitlines():
+        name, _, value = line.partition("=")
+        if name.strip() and not name.strip().startswith("#") and value.strip():
+            os.environ.setdefault(name.strip(), value.strip().strip('"'))
+
+# Sign in as you, with no key. Either way works: the account you signed in with az login, or the one you signed in
+# with in VS Code (Azure panel, Sign in to Azure; Windows only, needs azure-identity-broker). The first that works wins.
+SIGN_IN = ChainedTokenCredential(AzureCliCredential(), VisualStudioCodeCredential())
+
+
+def async_sign_in():
+    """The same sign-in, for the memory store's client, which runs asynchronously. Close it when done (async with)."""
+    return aio.ChainedTokenCredential(aio.AzureCliCredential(), aio.VisualStudioCodeCredential())
+
 
 MODEL = "gpt-4.1-mini"                                 # the same model as Labs 5 to 7
 TIME_LIMIT = 120                                       # seconds one answer may take before we give up on it
@@ -25,15 +47,15 @@ def make_client():
     """A chat client for the class Foundry project, signed in as you. No key."""
     endpoint = os.environ.get("FOUNDRY_PROJECT_ENDPOINT")   # your trainer gives you this address
     if not endpoint:
-        sys.exit("Set FOUNDRY_PROJECT_ENDPOINT first: export FOUNDRY_PROJECT_ENDPOINT=<the address your trainer gives you> "
-                 "(Windows PowerShell: $env:FOUNDRY_PROJECT_ENDPOINT=\"<address>\")")
-    return FoundryChatClient(project_endpoint=endpoint, model=MODEL, credential=AzureCliCredential())
+        sys.exit("Set FOUNDRY_PROJECT_ENDPOINT first: put FOUNDRY_PROJECT_ENDPOINT=<the address your trainer gives you> "
+                 "in a file named .env in this folder (or, in PowerShell: $env:FOUNDRY_PROJECT_ENDPOINT=\"<address>\")")
+    return FoundryChatClient(project_endpoint=endpoint, model=MODEL, credential=SIGN_IN)
 
 
 def who_am_i():
-    """The class account you signed in with (az login), read from your sign-in token. Used to keep your memories
+    """The class account you signed in with (az login or VS Code), read from your sign-in token. Used to keep your memories
     apart from your classmates', even when every VM has the same login name."""
-    token = AzureCliCredential().get_token("https://management.azure.com/.default").token
+    token = SIGN_IN.get_token("https://management.azure.com/.default").token
     claims = token.split(".")[1]                                          # the middle part of the token says who you are
     claims = json.loads(base64.urlsafe_b64decode(claims + "=" * (-len(claims) % 4)))
     return claims.get("upn") or claims.get("unique_name") or claims["oid"]
