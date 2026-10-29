@@ -9,3 +9,4 @@ data/pipeline/
 lab.env
 .env
 .DS_Store
+answers_*.json

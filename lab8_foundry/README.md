@@ -12,10 +12,13 @@ step4_tool.py             step 4: a tool you write, compare_months
 step5_skill.py            step 5: the refund-decision skill
 step6_sequence.py         step 6: a sequence, the agent then Replywriter
 step7_router.py           step 7: a router, triage then three desks, and an agent as a tool (--fixed)
+lab9_3_ask_the_lake.py    Lab 9 Part E: an agent that answers from your Fabric lakehouse
 freshcart_tools.py        the tools: one customer's claims, official numbers, the refund policy
 skills/refund-decision/   the skill: SKILL.md and the refund policy
 cases.py, lab8_common.py  the cases, the scorer and the shared runner
 copilot_studio_instructions.txt  Part D: the instructions for the Copilot Studio demo
 ```
 
-Set FOUNDRY_PROJECT_ENDPOINT to the address your trainer gives you. It is an address, not a key.
+Put the settings your trainer gives you in a file named .env in this folder, one NAME=value per line:
+FOUNDRY_PROJECT_ENDPOINT (Lab 8) and LAKE_SQL_ENDPOINT (Lab 9 Part E). They are addresses, not keys.
+The .env file never goes to GitHub.
