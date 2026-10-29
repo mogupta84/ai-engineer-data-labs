@@ -1,7 +1,8 @@
-# AI Engineer (Data): Labs 1 to 6
+# AI Engineer (Data): Labs 1 to 9
 
-The labs of the AI Engineer (Data) programme, with their data, so you can run them again on your own
-Databricks workspace. **Start with the essentials labs.** They are the course labs from now on.
+The labs of the AI Engineer (Data) programme, with their data. Labs 1 to 6 also have notebooks for your
+own Databricks workspace: **start with the essentials labs**. From Day 5 the class labs run on
+Microsoft Azure, each in its own folder with a handbook: see **[Labs on Microsoft Azure](#labs-on-microsoft-azure-days-5-to-9)**.
 
 New here? Read the **[onboarding guide to Labs 1 to 6](AI_Engineer_Data_Onboarding_Guide_Labs_1-6.pdf)**
 (PDF, 6 pages): how to get the labs, how to run them, and what each lab teaches.
@@ -204,6 +205,22 @@ Every step shows you the real thing first. The cell marked `YOUR CALL` is the on
 type your prediction or your setting there, then run the next cell to see what really happens. Each
 `YOUR CALL` cell already holds a working value, so a notebook runs from top to bottom before you
 change anything.
+
+## Labs on Microsoft Azure (Days 5 to 9)
+
+From Day 5 the class labs run on Microsoft Azure: Microsoft Foundry for agents, Azure AI Search for
+documents and Microsoft Fabric for data pipelines. Each folder has a handbook (PDF) with every step and
+the numbers to expect, so open it first. You sign in with your class account and your trainer gives you
+any addresses you need. Most labs need no keys; where one does, the handbook says where to find it.
+
+| Day | Lab | What you do | Folder and handbook |
+|---|---|---|---|
+| 5 | 5 | Turn your own Python function into a tool an agent can call, first as an OpenAPI tool, then as an MCP server | [`lab5_foundry`](lab5_foundry), handbook [Foundry_grounding_and_MCP_demo.pdf](lab5_foundry/Foundry_grounding_and_MCP_demo.pdf) |
+| 6 | 6 | Ask questions in English, let a model write the SQL, and make its numbers ones you can defend with business rules and a semantic layer | [`lab6_foundry`](lab6_foundry), handbook [Foundry_Lab6_numbers_you_can_defend.pdf](lab6_foundry/Foundry_Lab6_numbers_you_can_defend.pdf) |
+| 7 | 7 | Build a first enterprise agent in the Foundry portal, with tools, a plan and memory, plus a look at skills | [`lab7_foundry`](lab7_foundry), handbook [Foundry_Lab7_first_enterprise_agent.pdf](lab7_foundry/Foundry_Lab7_first_enterprise_agent.pdf) |
+| 8 | 8 | Build a support agent in code with Microsoft Agent Framework, add tracing, memory, a tool and a skill, then a router, and score it on the same cases after each step | [`lab8_foundry`](lab8_foundry), handbook [Foundry_Lab8_agent_in_code.pdf](lab8_foundry/Foundry_Lab8_agent_in_code.pdf) |
+| 9 | 1 to 4 in Azure | Redo Labs 1 to 4 on your own documents: read them with Document Intelligence, index them in Azure AI Search, and answer with an agent that cites its sources | [`labs1-4_azure`](labs1-4_azure), handbook [Labs1-4_in_Azure.pdf](labs1-4_azure/Labs1-4_in_Azure.pdf) |
+| 9 | 9 | Build a ticket pipeline in Microsoft Fabric: copy only the new rows, park bad ones with a reason, label each ticket with a model, run the steps in order, and ask the tables questions with a data agent | [`lab9_fabric`](lab9_fabric), handbook [Fabric_Lab9_pipeline.pdf](lab9_fabric/Fabric_Lab9_pipeline.pdf) |
 
 ## What is in this repository
 
