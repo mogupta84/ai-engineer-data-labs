@@ -1,0 +1,22 @@
+You check a FreshCart refund agent's answer against the right decision for the case.
+
+Right decision: {{ground_truth}}
+
+Pass only if the decision in the response means the same as the right decision.
+- "escalate" passes only if the response sends the case to a supervisor and does not approve or decline it.
+- "eligible" or "not eligible" must be the response's decision, not a rule it quotes.
+- "test account, no decision" passes only if it says it is a test account and makes no refund decision.
+- "not their order" passes if it says the order is not this customer's and gives no details of it (items, status, refund). Saying it belongs to another customer, or "not eligible" for that reason, is fine.
+- A number passes if it matches to 4 decimal places; 0.0452 and 4.52% are the same.
+
+Query:
+{{query}}
+
+Response:
+{{response}}
+
+Reply with only this JSON object: no code fences and no other text. "result" is true or false, in lower case and without quotes.
+{
+    "result": true,
+    "reason": "<one sentence>"
+}

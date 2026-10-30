@@ -1,0 +1,242 @@
+Reference only, not needed for refund decisions: FreshCart's restaurant partners.
+
+Restaurant 1: Kolkata, Thali, partner since 2022, rating 4.8, average delivery 22 minutes, kitchen open 9:00 to 22:30.
+Restaurant 2: Ahmedabad, Bakery, partner since 2024, rating 3.5, average delivery 24 minutes, kitchen open 11:00 to 22:30.
+Restaurant 3: Delhi, Chinese, partner since 2024, rating 4.1, average delivery 24 minutes, kitchen open 11:00 to 21:30.
+Restaurant 4: Hyderabad, Thali, partner since 2022, rating 3.9, average delivery 38 minutes, kitchen open 11:00 to 21:30.
+Restaurant 5: Chennai, Street food, partner since 2020, rating 4.4, average delivery 37 minutes, kitchen open 11:00 to 23:30.
+Restaurant 6: Pune, North Indian, partner since 2023, rating 3.0, average delivery 37 minutes, kitchen open 9:00 to 21:30.
+Restaurant 7: Chennai, Pizza, partner since 2021, rating 3.7, average delivery 42 minutes, kitchen open 11:00 to 22:30.
+Restaurant 8: Ahmedabad, South Indian, partner since 2024, rating 4.8, average delivery 42 minutes, kitchen open 9:00 to 21:30.
+Restaurant 9: Pune, Chinese, partner since 2019, rating 3.1, average delivery 53 minutes, kitchen open 10:00 to 23:30.
+Restaurant 10: Delhi, Pizza, partner since 2019, rating 3.4, average delivery 46 minutes, kitchen open 10:00 to 23:30.
+Restaurant 11: Mumbai, South Indian, partner since 2019, rating 4.4, average delivery 32 minutes, kitchen open 9:00 to 22:30.
+Restaurant 12: Pune, Thali, partner since 2022, rating 3.7, average delivery 39 minutes, kitchen open 9:00 to 23:30.
+Restaurant 13: Mumbai, South Indian, partner since 2021, rating 4.4, average delivery 41 minutes, kitchen open 9:00 to 23:30.
+Restaurant 14: Mumbai, Biryani, partner since 2022, rating 4.1, average delivery 42 minutes, kitchen open 11:00 to 21:30.
+Restaurant 15: Kolkata, Pizza, partner since 2024, rating 3.1, average delivery 43 minutes, kitchen open 10:00 to 21:30.
+Restaurant 16: Delhi, Bakery, partner since 2022, rating 4.2, average delivery 32 minutes, kitchen open 11:00 to 22:30.
+Restaurant 17: Bengaluru, Pizza, partner since 2021, rating 4.6, average delivery 52 minutes, kitchen open 11:00 to 21:30.
+Restaurant 18: Mumbai, Desserts, partner since 2024, rating 4.4, average delivery 47 minutes, kitchen open 9:00 to 22:30.
+Restaurant 19: Hyderabad, Pizza, partner since 2022, rating 4.5, average delivery 32 minutes, kitchen open 11:00 to 21:30.
+Restaurant 20: Pune, North Indian, partner since 2019, rating 4.4, average delivery 56 minutes, kitchen open 8:00 to 21:30.
+Restaurant 21: Hyderabad, South Indian, partner since 2020, rating 3.3, average delivery 51 minutes, kitchen open 11:00 to 21:30.
+Restaurant 22: Ahmedabad, Thali, partner since 2023, rating 4.4, average delivery 43 minutes, kitchen open 10:00 to 23:30.
+Restaurant 23: Ahmedabad, Thali, partner since 2021, rating 4.6, average delivery 55 minutes, kitchen open 9:00 to 23:30.
+Restaurant 24: Bengaluru, Street food, partner since 2023, rating 3.1, average delivery 34 minutes, kitchen open 11:00 to 21:30.
+Restaurant 25: Delhi, Bakery, partner since 2022, rating 3.7, average delivery 40 minutes, kitchen open 8:00 to 21:30.
+Restaurant 26: Delhi, Bakery, partner since 2020, rating 4.5, average delivery 31 minutes, kitchen open 10:00 to 23:30.
+Restaurant 27: Pune, Chinese, partner since 2021, rating 3.5, average delivery 27 minutes, kitchen open 9:00 to 22:30.
+Restaurant 28: Bengaluru, South Indian, partner since 2024, rating 3.9, average delivery 51 minutes, kitchen open 11:00 to 22:30.
+Restaurant 29: Bengaluru, Bakery, partner since 2023, rating 4.1, average delivery 29 minutes, kitchen open 8:00 to 21:30.
+Restaurant 30: Pune, Kebabs, partner since 2022, rating 4.2, average delivery 34 minutes, kitchen open 8:00 to 22:30.
+Restaurant 31: Delhi, North Indian, partner since 2021, rating 3.8, average delivery 45 minutes, kitchen open 11:00 to 22:30.
+Restaurant 32: Bengaluru, Bakery, partner since 2022, rating 3.9, average delivery 54 minutes, kitchen open 11:00 to 23:30.
+Restaurant 33: Chennai, Thali, partner since 2022, rating 4.0, average delivery 44 minutes, kitchen open 10:00 to 22:30.
+Restaurant 34: Ahmedabad, Desserts, partner since 2023, rating 4.5, average delivery 27 minutes, kitchen open 10:00 to 23:30.
+Restaurant 35: Pune, Biryani, partner since 2023, rating 4.3, average delivery 58 minutes, kitchen open 8:00 to 23:30.
+Restaurant 36: Chennai, North Indian, partner since 2023, rating 4.0, average delivery 42 minutes, kitchen open 8:00 to 23:30.
+Restaurant 37: Pune, Kebabs, partner since 2021, rating 3.9, average delivery 33 minutes, kitchen open 9:00 to 21:30.
+Restaurant 38: Chennai, South Indian, partner since 2023, rating 3.1, average delivery 36 minutes, kitchen open 8:00 to 22:30.
+Restaurant 39: Bengaluru, Kebabs, partner since 2023, rating 4.4, average delivery 23 minutes, kitchen open 11:00 to 21:30.
+Restaurant 40: Hyderabad, Kebabs, partner since 2020, rating 4.6, average delivery 58 minutes, kitchen open 10:00 to 21:30.
+Restaurant 41: Kolkata, North Indian, partner since 2023, rating 4.1, average delivery 47 minutes, kitchen open 10:00 to 23:30.
+Restaurant 42: Mumbai, Biryani, partner since 2019, rating 4.9, average delivery 44 minutes, kitchen open 9:00 to 21:30.
+Restaurant 43: Hyderabad, South Indian, partner since 2022, rating 4.4, average delivery 58 minutes, kitchen open 10:00 to 21:30.
+Restaurant 44: Mumbai, Desserts, partner since 2024, rating 4.5, average delivery 50 minutes, kitchen open 11:00 to 23:30.
+Restaurant 45: Mumbai, Street food, partner since 2022, rating 4.0, average delivery 57 minutes, kitchen open 11:00 to 22:30.
+Restaurant 46: Bengaluru, South Indian, partner since 2022, rating 3.4, average delivery 24 minutes, kitchen open 9:00 to 23:30.
+Restaurant 47: Bengaluru, Kebabs, partner since 2022, rating 4.1, average delivery 57 minutes, kitchen open 11:00 to 21:30.
+Restaurant 48: Kolkata, Biryani, partner since 2021, rating 3.7, average delivery 25 minutes, kitchen open 9:00 to 21:30.
+Restaurant 49: Hyderabad, Biryani, partner since 2021, rating 3.1, average delivery 47 minutes, kitchen open 11:00 to 21:30.
+Restaurant 50: Hyderabad, Chinese, partner since 2022, rating 3.5, average delivery 32 minutes, kitchen open 11:00 to 22:30.
+Restaurant 51: Hyderabad, North Indian, partner since 2020, rating 3.5, average delivery 48 minutes, kitchen open 9:00 to 23:30.
+Restaurant 52: Pune, South Indian, partner since 2022, rating 3.3, average delivery 37 minutes, kitchen open 8:00 to 22:30.
+Restaurant 53: Chennai, Bakery, partner since 2023, rating 3.3, average delivery 44 minutes, kitchen open 11:00 to 23:30.
+Restaurant 54: Bengaluru, Pizza, partner since 2021, rating 3.0, average delivery 32 minutes, kitchen open 11:00 to 23:30.
+Restaurant 55: Bengaluru, South Indian, partner since 2023, rating 4.5, average delivery 28 minutes, kitchen open 11:00 to 23:30.
+Restaurant 56: Bengaluru, Bakery, partner since 2021, rating 3.2, average delivery 34 minutes, kitchen open 8:00 to 21:30.
+Restaurant 57: Pune, North Indian, partner since 2019, rating 4.3, average delivery 43 minutes, kitchen open 9:00 to 23:30.
+Restaurant 58: Kolkata, Street food, partner since 2021, rating 4.5, average delivery 32 minutes, kitchen open 8:00 to 21:30.
+Restaurant 59: Mumbai, Bakery, partner since 2020, rating 3.7, average delivery 37 minutes, kitchen open 11:00 to 23:30.
+Restaurant 60: Pune, Pizza, partner since 2019, rating 3.4, average delivery 22 minutes, kitchen open 8:00 to 21:30.
+Restaurant 61: Kolkata, Biryani, partner since 2019, rating 4.2, average delivery 26 minutes, kitchen open 8:00 to 23:30.
+Restaurant 62: Pune, Biryani, partner since 2023, rating 4.3, average delivery 25 minutes, kitchen open 9:00 to 21:30.
+Restaurant 63: Pune, Kebabs, partner since 2022, rating 4.4, average delivery 43 minutes, kitchen open 9:00 to 21:30.
+Restaurant 64: Pune, Desserts, partner since 2022, rating 4.1, average delivery 26 minutes, kitchen open 9:00 to 22:30.
+Restaurant 65: Chennai, Biryani, partner since 2019, rating 4.4, average delivery 22 minutes, kitchen open 9:00 to 22:30.
+Restaurant 66: Delhi, Pizza, partner since 2021, rating 3.4, average delivery 28 minutes, kitchen open 8:00 to 22:30.
+Restaurant 67: Hyderabad, North Indian, partner since 2023, rating 3.8, average delivery 55 minutes, kitchen open 11:00 to 23:30.
+Restaurant 68: Mumbai, North Indian, partner since 2024, rating 3.1, average delivery 25 minutes, kitchen open 9:00 to 23:30.
+Restaurant 69: Kolkata, Chinese, partner since 2020, rating 3.9, average delivery 48 minutes, kitchen open 9:00 to 21:30.
+Restaurant 70: Hyderabad, Pizza, partner since 2024, rating 3.3, average delivery 52 minutes, kitchen open 10:00 to 22:30.
+Restaurant 71: Ahmedabad, Biryani, partner since 2024, rating 3.4, average delivery 23 minutes, kitchen open 11:00 to 23:30.
+Restaurant 72: Mumbai, Desserts, partner since 2024, rating 3.5, average delivery 43 minutes, kitchen open 11:00 to 21:30.
+Restaurant 73: Kolkata, Desserts, partner since 2023, rating 4.2, average delivery 32 minutes, kitchen open 11:00 to 23:30.
+Restaurant 74: Chennai, Chinese, partner since 2022, rating 4.6, average delivery 44 minutes, kitchen open 11:00 to 21:30.
+Restaurant 75: Hyderabad, Street food, partner since 2020, rating 3.1, average delivery 51 minutes, kitchen open 8:00 to 23:30.
+Restaurant 76: Hyderabad, Pizza, partner since 2023, rating 3.1, average delivery 46 minutes, kitchen open 8:00 to 23:30.
+Restaurant 77: Kolkata, Biryani, partner since 2019, rating 3.0, average delivery 45 minutes, kitchen open 11:00 to 21:30.
+Restaurant 78: Ahmedabad, Kebabs, partner since 2024, rating 3.2, average delivery 28 minutes, kitchen open 8:00 to 22:30.
+Restaurant 79: Ahmedabad, Thali, partner since 2021, rating 3.5, average delivery 30 minutes, kitchen open 11:00 to 23:30.
+Restaurant 80: Bengaluru, Chinese, partner since 2024, rating 3.4, average delivery 46 minutes, kitchen open 9:00 to 23:30.
+Restaurant 81: Ahmedabad, Thali, partner since 2020, rating 3.2, average delivery 56 minutes, kitchen open 9:00 to 23:30.
+Restaurant 82: Mumbai, South Indian, partner since 2024, rating 4.2, average delivery 51 minutes, kitchen open 8:00 to 21:30.
+Restaurant 83: Kolkata, Desserts, partner since 2020, rating 3.5, average delivery 45 minutes, kitchen open 11:00 to 23:30.
+Restaurant 84: Bengaluru, Chinese, partner since 2021, rating 3.9, average delivery 38 minutes, kitchen open 9:00 to 21:30.
+Restaurant 85: Ahmedabad, Thali, partner since 2021, rating 4.0, average delivery 22 minutes, kitchen open 10:00 to 23:30.
+Restaurant 86: Chennai, Pizza, partner since 2024, rating 4.8, average delivery 25 minutes, kitchen open 11:00 to 23:30.
+Restaurant 87: Chennai, Desserts, partner since 2020, rating 3.3, average delivery 48 minutes, kitchen open 11:00 to 21:30.
+Restaurant 88: Delhi, Desserts, partner since 2020, rating 3.2, average delivery 46 minutes, kitchen open 8:00 to 21:30.
+Restaurant 89: Chennai, Kebabs, partner since 2022, rating 3.2, average delivery 48 minutes, kitchen open 8:00 to 22:30.
+Restaurant 90: Ahmedabad, Chinese, partner since 2022, rating 3.0, average delivery 50 minutes, kitchen open 11:00 to 23:30.
+Restaurant 91: Ahmedabad, Thali, partner since 2021, rating 4.7, average delivery 31 minutes, kitchen open 11:00 to 21:30.
+Restaurant 92: Bengaluru, Desserts, partner since 2022, rating 4.8, average delivery 51 minutes, kitchen open 11:00 to 22:30.
+Restaurant 93: Ahmedabad, Kebabs, partner since 2019, rating 4.6, average delivery 56 minutes, kitchen open 10:00 to 23:30.
+Restaurant 94: Ahmedabad, Bakery, partner since 2020, rating 3.7, average delivery 36 minutes, kitchen open 10:00 to 23:30.
+Restaurant 95: Mumbai, Pizza, partner since 2019, rating 4.7, average delivery 58 minutes, kitchen open 8:00 to 21:30.
+Restaurant 96: Mumbai, Thali, partner since 2021, rating 3.5, average delivery 34 minutes, kitchen open 8:00 to 21:30.
+Restaurant 97: Ahmedabad, Street food, partner since 2019, rating 4.6, average delivery 37 minutes, kitchen open 8:00 to 21:30.
+Restaurant 98: Mumbai, Desserts, partner since 2022, rating 4.1, average delivery 23 minutes, kitchen open 11:00 to 23:30.
+Restaurant 99: Hyderabad, Bakery, partner since 2019, rating 3.4, average delivery 38 minutes, kitchen open 8:00 to 21:30.
+Restaurant 100: Bengaluru, South Indian, partner since 2023, rating 4.5, average delivery 40 minutes, kitchen open 10:00 to 22:30.
+Restaurant 101: Pune, Street food, partner since 2023, rating 3.9, average delivery 49 minutes, kitchen open 8:00 to 21:30.
+Restaurant 102: Ahmedabad, Street food, partner since 2022, rating 4.3, average delivery 52 minutes, kitchen open 10:00 to 21:30.
+Restaurant 103: Mumbai, Kebabs, partner since 2020, rating 4.7, average delivery 42 minutes, kitchen open 10:00 to 21:30.
+Restaurant 104: Kolkata, Kebabs, partner since 2022, rating 3.1, average delivery 32 minutes, kitchen open 9:00 to 22:30.
+Restaurant 105: Hyderabad, Thali, partner since 2019, rating 4.2, average delivery 37 minutes, kitchen open 9:00 to 23:30.
+Restaurant 106: Delhi, Desserts, partner since 2019, rating 4.7, average delivery 38 minutes, kitchen open 11:00 to 21:30.
+Restaurant 107: Delhi, Chinese, partner since 2024, rating 3.5, average delivery 32 minutes, kitchen open 11:00 to 22:30.
+Restaurant 108: Bengaluru, Thali, partner since 2024, rating 3.7, average delivery 49 minutes, kitchen open 11:00 to 21:30.
+Restaurant 109: Bengaluru, Street food, partner since 2022, rating 3.4, average delivery 34 minutes, kitchen open 8:00 to 23:30.
+Restaurant 110: Mumbai, Chinese, partner since 2019, rating 4.2, average delivery 56 minutes, kitchen open 8:00 to 23:30.
+Restaurant 111: Bengaluru, Kebabs, partner since 2021, rating 4.0, average delivery 53 minutes, kitchen open 9:00 to 22:30.
+Restaurant 112: Bengaluru, Thali, partner since 2022, rating 4.4, average delivery 54 minutes, kitchen open 8:00 to 22:30.
+Restaurant 113: Delhi, Chinese, partner since 2019, rating 3.3, average delivery 26 minutes, kitchen open 10:00 to 21:30.
+Restaurant 114: Chennai, Street food, partner since 2021, rating 4.7, average delivery 45 minutes, kitchen open 9:00 to 22:30.
+Restaurant 115: Mumbai, South Indian, partner since 2019, rating 4.4, average delivery 29 minutes, kitchen open 11:00 to 23:30.
+Restaurant 116: Kolkata, Biryani, partner since 2023, rating 3.4, average delivery 48 minutes, kitchen open 9:00 to 22:30.
+Restaurant 117: Ahmedabad, South Indian, partner since 2020, rating 3.2, average delivery 43 minutes, kitchen open 10:00 to 21:30.
+Restaurant 118: Kolkata, Desserts, partner since 2024, rating 4.6, average delivery 24 minutes, kitchen open 8:00 to 21:30.
+Restaurant 119: Ahmedabad, Pizza, partner since 2022, rating 4.7, average delivery 56 minutes, kitchen open 10:00 to 23:30.
+Restaurant 120: Hyderabad, Bakery, partner since 2023, rating 3.4, average delivery 51 minutes, kitchen open 10:00 to 22:30.
+Restaurant 121: Delhi, Bakery, partner since 2024, rating 3.9, average delivery 44 minutes, kitchen open 8:00 to 22:30.
+Restaurant 122: Pune, Street food, partner since 2022, rating 4.3, average delivery 47 minutes, kitchen open 9:00 to 22:30.
+Restaurant 123: Delhi, Biryani, partner since 2023, rating 4.9, average delivery 32 minutes, kitchen open 8:00 to 22:30.
+Restaurant 124: Hyderabad, Thali, partner since 2021, rating 3.5, average delivery 42 minutes, kitchen open 9:00 to 23:30.
+Restaurant 125: Mumbai, North Indian, partner since 2019, rating 4.8, average delivery 32 minutes, kitchen open 9:00 to 21:30.
+Restaurant 126: Chennai, Street food, partner since 2022, rating 4.1, average delivery 41 minutes, kitchen open 10:00 to 21:30.
+Restaurant 127: Bengaluru, Street food, partner since 2019, rating 3.2, average delivery 58 minutes, kitchen open 9:00 to 22:30.
+Restaurant 128: Bengaluru, Kebabs, partner since 2023, rating 3.8, average delivery 57 minutes, kitchen open 10:00 to 21:30.
+Restaurant 129: Pune, Street food, partner since 2022, rating 4.9, average delivery 25 minutes, kitchen open 10:00 to 22:30.
+Restaurant 130: Ahmedabad, Desserts, partner since 2021, rating 4.7, average delivery 53 minutes, kitchen open 8:00 to 22:30.
+Restaurant 131: Chennai, Kebabs, partner since 2023, rating 4.5, average delivery 33 minutes, kitchen open 9:00 to 22:30.
+Restaurant 132: Pune, Street food, partner since 2024, rating 3.8, average delivery 28 minutes, kitchen open 10:00 to 21:30.
+Restaurant 133: Delhi, South Indian, partner since 2021, rating 4.3, average delivery 37 minutes, kitchen open 9:00 to 23:30.
+Restaurant 134: Mumbai, North Indian, partner since 2023, rating 4.7, average delivery 40 minutes, kitchen open 9:00 to 22:30.
+Restaurant 135: Bengaluru, Kebabs, partner since 2024, rating 3.3, average delivery 32 minutes, kitchen open 10:00 to 21:30.
+Restaurant 136: Hyderabad, Desserts, partner since 2020, rating 4.4, average delivery 25 minutes, kitchen open 11:00 to 23:30.
+Restaurant 137: Mumbai, North Indian, partner since 2023, rating 3.9, average delivery 54 minutes, kitchen open 9:00 to 23:30.
+Restaurant 138: Delhi, Biryani, partner since 2022, rating 3.9, average delivery 58 minutes, kitchen open 10:00 to 21:30.
+Restaurant 139: Pune, Biryani, partner since 2020, rating 4.2, average delivery 22 minutes, kitchen open 11:00 to 22:30.
+Restaurant 140: Pune, Kebabs, partner since 2023, rating 3.0, average delivery 23 minutes, kitchen open 9:00 to 23:30.
+Restaurant 141: Chennai, Thali, partner since 2020, rating 4.8, average delivery 54 minutes, kitchen open 11:00 to 22:30.
+Restaurant 142: Bengaluru, Street food, partner since 2023, rating 3.7, average delivery 45 minutes, kitchen open 8:00 to 23:30.
+Restaurant 143: Kolkata, Biryani, partner since 2019, rating 3.4, average delivery 35 minutes, kitchen open 10:00 to 21:30.
+Restaurant 144: Delhi, Desserts, partner since 2022, rating 3.1, average delivery 50 minutes, kitchen open 10:00 to 23:30.
+Restaurant 145: Kolkata, Chinese, partner since 2020, rating 4.9, average delivery 58 minutes, kitchen open 9:00 to 23:30.
+Restaurant 146: Hyderabad, North Indian, partner since 2021, rating 3.4, average delivery 55 minutes, kitchen open 11:00 to 22:30.
+Restaurant 147: Delhi, Biryani, partner since 2022, rating 3.2, average delivery 41 minutes, kitchen open 9:00 to 22:30.
+Restaurant 148: Ahmedabad, Bakery, partner since 2019, rating 4.5, average delivery 40 minutes, kitchen open 8:00 to 22:30.
+Restaurant 149: Delhi, South Indian, partner since 2021, rating 4.6, average delivery 49 minutes, kitchen open 8:00 to 21:30.
+Restaurant 150: Mumbai, Biryani, partner since 2019, rating 3.7, average delivery 48 minutes, kitchen open 8:00 to 21:30.
+Restaurant 151: Chennai, North Indian, partner since 2022, rating 4.1, average delivery 43 minutes, kitchen open 10:00 to 22:30.
+Restaurant 152: Chennai, Thali, partner since 2019, rating 4.7, average delivery 56 minutes, kitchen open 8:00 to 22:30.
+Restaurant 153: Bengaluru, Pizza, partner since 2019, rating 4.2, average delivery 56 minutes, kitchen open 10:00 to 22:30.
+Restaurant 154: Kolkata, North Indian, partner since 2021, rating 4.8, average delivery 51 minutes, kitchen open 10:00 to 22:30.
+Restaurant 155: Mumbai, Biryani, partner since 2021, rating 4.5, average delivery 28 minutes, kitchen open 10:00 to 21:30.
+Restaurant 156: Hyderabad, North Indian, partner since 2024, rating 3.9, average delivery 22 minutes, kitchen open 10:00 to 21:30.
+Restaurant 157: Hyderabad, North Indian, partner since 2020, rating 4.8, average delivery 23 minutes, kitchen open 10:00 to 21:30.
+Restaurant 158: Hyderabad, Pizza, partner since 2019, rating 4.9, average delivery 41 minutes, kitchen open 11:00 to 23:30.
+Restaurant 159: Pune, Kebabs, partner since 2022, rating 4.0, average delivery 22 minutes, kitchen open 9:00 to 22:30.
+Restaurant 160: Bengaluru, Street food, partner since 2021, rating 4.6, average delivery 40 minutes, kitchen open 11:00 to 23:30.
+Restaurant 161: Delhi, Desserts, partner since 2020, rating 3.7, average delivery 46 minutes, kitchen open 10:00 to 23:30.
+Restaurant 162: Chennai, Chinese, partner since 2023, rating 4.3, average delivery 23 minutes, kitchen open 8:00 to 21:30.
+Restaurant 163: Pune, Chinese, partner since 2020, rating 3.1, average delivery 27 minutes, kitchen open 10:00 to 22:30.
+Restaurant 164: Delhi, Biryani, partner since 2024, rating 4.9, average delivery 25 minutes, kitchen open 8:00 to 21:30.
+Restaurant 165: Pune, Chinese, partner since 2024, rating 3.2, average delivery 57 minutes, kitchen open 11:00 to 22:30.
+Restaurant 166: Chennai, South Indian, partner since 2019, rating 4.7, average delivery 28 minutes, kitchen open 9:00 to 23:30.
+Restaurant 167: Delhi, Thali, partner since 2024, rating 3.8, average delivery 26 minutes, kitchen open 10:00 to 23:30.
+Restaurant 168: Delhi, Bakery, partner since 2024, rating 3.7, average delivery 37 minutes, kitchen open 11:00 to 21:30.
+Restaurant 169: Ahmedabad, Street food, partner since 2021, rating 3.6, average delivery 49 minutes, kitchen open 8:00 to 22:30.
+Restaurant 170: Mumbai, Thali, partner since 2021, rating 3.4, average delivery 45 minutes, kitchen open 9:00 to 23:30.
+Restaurant 171: Chennai, Kebabs, partner since 2024, rating 4.6, average delivery 57 minutes, kitchen open 11:00 to 21:30.
+Restaurant 172: Ahmedabad, Thali, partner since 2024, rating 3.3, average delivery 38 minutes, kitchen open 8:00 to 21:30.
+Restaurant 173: Pune, Pizza, partner since 2024, rating 3.3, average delivery 31 minutes, kitchen open 9:00 to 22:30.
+Restaurant 174: Bengaluru, South Indian, partner since 2019, rating 3.1, average delivery 48 minutes, kitchen open 11:00 to 23:30.
+Restaurant 175: Kolkata, South Indian, partner since 2020, rating 4.3, average delivery 41 minutes, kitchen open 8:00 to 21:30.
+Restaurant 176: Pune, Street food, partner since 2021, rating 4.4, average delivery 56 minutes, kitchen open 11:00 to 21:30.
+Restaurant 177: Bengaluru, Biryani, partner since 2024, rating 3.6, average delivery 26 minutes, kitchen open 8:00 to 23:30.
+Restaurant 178: Mumbai, Kebabs, partner since 2021, rating 4.0, average delivery 38 minutes, kitchen open 10:00 to 23:30.
+Restaurant 179: Kolkata, Pizza, partner since 2020, rating 4.8, average delivery 35 minutes, kitchen open 11:00 to 22:30.
+Restaurant 180: Ahmedabad, Thali, partner since 2023, rating 4.2, average delivery 50 minutes, kitchen open 10:00 to 22:30.
+Restaurant 181: Hyderabad, Pizza, partner since 2020, rating 4.0, average delivery 56 minutes, kitchen open 11:00 to 21:30.
+Restaurant 182: Kolkata, Desserts, partner since 2022, rating 3.5, average delivery 24 minutes, kitchen open 11:00 to 21:30.
+Restaurant 183: Kolkata, Desserts, partner since 2023, rating 3.5, average delivery 26 minutes, kitchen open 9:00 to 23:30.
+Restaurant 184: Delhi, Pizza, partner since 2024, rating 3.5, average delivery 56 minutes, kitchen open 9:00 to 23:30.
+Restaurant 185: Hyderabad, Kebabs, partner since 2020, rating 3.1, average delivery 55 minutes, kitchen open 11:00 to 21:30.
+Restaurant 186: Mumbai, Desserts, partner since 2024, rating 3.2, average delivery 37 minutes, kitchen open 11:00 to 21:30.
+Restaurant 187: Kolkata, Biryani, partner since 2024, rating 3.5, average delivery 30 minutes, kitchen open 9:00 to 21:30.
+Restaurant 188: Ahmedabad, North Indian, partner since 2019, rating 3.3, average delivery 26 minutes, kitchen open 8:00 to 21:30.
+Restaurant 189: Ahmedabad, Desserts, partner since 2019, rating 4.9, average delivery 35 minutes, kitchen open 8:00 to 21:30.
+Restaurant 190: Delhi, Kebabs, partner since 2024, rating 4.1, average delivery 32 minutes, kitchen open 10:00 to 22:30.
+Restaurant 191: Bengaluru, Pizza, partner since 2023, rating 3.6, average delivery 49 minutes, kitchen open 9:00 to 23:30.
+Restaurant 192: Ahmedabad, Desserts, partner since 2023, rating 4.7, average delivery 41 minutes, kitchen open 11:00 to 21:30.
+Restaurant 193: Hyderabad, North Indian, partner since 2021, rating 4.6, average delivery 38 minutes, kitchen open 8:00 to 23:30.
+Restaurant 194: Pune, Thali, partner since 2021, rating 4.3, average delivery 26 minutes, kitchen open 10:00 to 21:30.
+Restaurant 195: Hyderabad, Biryani, partner since 2019, rating 3.2, average delivery 46 minutes, kitchen open 10:00 to 21:30.
+Restaurant 196: Bengaluru, North Indian, partner since 2021, rating 3.8, average delivery 49 minutes, kitchen open 11:00 to 23:30.
+Restaurant 197: Delhi, Bakery, partner since 2024, rating 4.0, average delivery 47 minutes, kitchen open 9:00 to 23:30.
+Restaurant 198: Kolkata, Bakery, partner since 2020, rating 3.9, average delivery 37 minutes, kitchen open 8:00 to 21:30.
+Restaurant 199: Mumbai, Chinese, partner since 2019, rating 3.3, average delivery 38 minutes, kitchen open 10:00 to 22:30.
+Restaurant 200: Delhi, Street food, partner since 2019, rating 4.8, average delivery 57 minutes, kitchen open 11:00 to 23:30.
+Restaurant 201: Hyderabad, South Indian, partner since 2022, rating 4.3, average delivery 49 minutes, kitchen open 11:00 to 23:30.
+Restaurant 202: Kolkata, Street food, partner since 2021, rating 3.0, average delivery 54 minutes, kitchen open 8:00 to 22:30.
+Restaurant 203: Kolkata, Kebabs, partner since 2022, rating 3.3, average delivery 53 minutes, kitchen open 9:00 to 22:30.
+Restaurant 204: Delhi, Bakery, partner since 2019, rating 3.4, average delivery 39 minutes, kitchen open 10:00 to 22:30.
+Restaurant 205: Bengaluru, South Indian, partner since 2022, rating 4.3, average delivery 43 minutes, kitchen open 9:00 to 22:30.
+Restaurant 206: Delhi, Kebabs, partner since 2022, rating 3.3, average delivery 29 minutes, kitchen open 11:00 to 22:30.
+Restaurant 207: Hyderabad, Street food, partner since 2020, rating 4.8, average delivery 24 minutes, kitchen open 8:00 to 23:30.
+Restaurant 208: Ahmedabad, Bakery, partner since 2022, rating 3.8, average delivery 31 minutes, kitchen open 9:00 to 22:30.
+Restaurant 209: Chennai, North Indian, partner since 2023, rating 4.1, average delivery 58 minutes, kitchen open 11:00 to 23:30.
+Restaurant 210: Hyderabad, Desserts, partner since 2019, rating 4.8, average delivery 40 minutes, kitchen open 9:00 to 23:30.
+Restaurant 211: Chennai, Biryani, partner since 2023, rating 3.6, average delivery 54 minutes, kitchen open 9:00 to 21:30.
+Restaurant 212: Bengaluru, South Indian, partner since 2022, rating 4.0, average delivery 42 minutes, kitchen open 11:00 to 22:30.
+Restaurant 213: Delhi, Street food, partner since 2024, rating 3.5, average delivery 28 minutes, kitchen open 8:00 to 23:30.
+Restaurant 214: Chennai, South Indian, partner since 2021, rating 4.9, average delivery 41 minutes, kitchen open 10:00 to 21:30.
+Restaurant 215: Ahmedabad, South Indian, partner since 2024, rating 3.9, average delivery 38 minutes, kitchen open 11:00 to 22:30.
+Restaurant 216: Delhi, South Indian, partner since 2023, rating 4.1, average delivery 53 minutes, kitchen open 11:00 to 22:30.
+Restaurant 217: Pune, Biryani, partner since 2021, rating 4.9, average delivery 36 minutes, kitchen open 8:00 to 21:30.
+Restaurant 218: Pune, North Indian, partner since 2023, rating 3.3, average delivery 25 minutes, kitchen open 9:00 to 23:30.
+Restaurant 219: Hyderabad, Desserts, partner since 2022, rating 3.0, average delivery 51 minutes, kitchen open 11:00 to 21:30.
+Restaurant 220: Delhi, Bakery, partner since 2022, rating 3.0, average delivery 36 minutes, kitchen open 11:00 to 22:30.
+Restaurant 221: Mumbai, Pizza, partner since 2023, rating 3.1, average delivery 54 minutes, kitchen open 9:00 to 22:30.
+Restaurant 222: Pune, Thali, partner since 2024, rating 4.7, average delivery 52 minutes, kitchen open 9:00 to 23:30.
+Restaurant 223: Delhi, South Indian, partner since 2019, rating 3.1, average delivery 36 minutes, kitchen open 8:00 to 21:30.
+Restaurant 224: Pune, Street food, partner since 2023, rating 3.8, average delivery 51 minutes, kitchen open 10:00 to 23:30.
+Restaurant 225: Delhi, Pizza, partner since 2020, rating 4.0, average delivery 52 minutes, kitchen open 11:00 to 22:30.
+Restaurant 226: Pune, Thali, partner since 2023, rating 4.4, average delivery 37 minutes, kitchen open 11:00 to 23:30.
+Restaurant 227: Chennai, Pizza, partner since 2020, rating 3.4, average delivery 30 minutes, kitchen open 8:00 to 23:30.
+Restaurant 228: Hyderabad, Chinese, partner since 2019, rating 3.0, average delivery 31 minutes, kitchen open 8:00 to 23:30.
+Restaurant 229: Pune, South Indian, partner since 2022, rating 3.5, average delivery 24 minutes, kitchen open 11:00 to 21:30.
+Restaurant 230: Delhi, North Indian, partner since 2023, rating 3.5, average delivery 37 minutes, kitchen open 11:00 to 22:30.
+Restaurant 231: Delhi, Pizza, partner since 2022, rating 3.3, average delivery 35 minutes, kitchen open 11:00 to 22:30.
+Restaurant 232: Hyderabad, Desserts, partner since 2023, rating 4.3, average delivery 43 minutes, kitchen open 11:00 to 23:30.
+Restaurant 233: Hyderabad, Street food, partner since 2023, rating 4.1, average delivery 56 minutes, kitchen open 8:00 to 21:30.
+Restaurant 234: Mumbai, Bakery, partner since 2020, rating 3.2, average delivery 41 minutes, kitchen open 10:00 to 21:30.
+Restaurant 235: Pune, Biryani, partner since 2022, rating 4.2, average delivery 54 minutes, kitchen open 8:00 to 22:30.
+Restaurant 236: Ahmedabad, Chinese, partner since 2020, rating 4.7, average delivery 25 minutes, kitchen open 9:00 to 21:30.
+Restaurant 237: Pune, Thali, partner since 2024, rating 4.2, average delivery 38 minutes, kitchen open 9:00 to 22:30.
+Restaurant 238: Chennai, Desserts, partner since 2022, rating 4.8, average delivery 25 minutes, kitchen open 11:00 to 23:30.
+Restaurant 239: Kolkata, Thali, partner since 2019, rating 3.2, average delivery 23 minutes, kitchen open 11:00 to 22:30.
+Restaurant 240: Delhi, Biryani, partner since 2022, rating 3.0, average delivery 46 minutes, kitchen open 9:00 to 22:30.
