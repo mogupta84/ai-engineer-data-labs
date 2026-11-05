@@ -1,0 +1,10 @@
+1. Priya Sharma (priya.sharma84@example.com, +91 98450 12345) says order 6987 arrived spilled. Refund to UPI priya84@okhdfcbank.
+2. Customer 57 called from 080-4123-7788 about order 2117; she lives at 14, 2nd Cross, Indiranagar, Bengaluru 560038.
+3. Rahul Verma shared his Aadhaar 2345 6789 0123 by mistake while asking about order 3405.
+4. FreshCart loyalty member FCL-778812 (Anita D'Souza) wants the refund for order 1874 as FreshCart credit.
+5. PAN ABCPV1234K given for the GST invoice on order 2465. Contact: v.iyer@example.in.
+6. Refund of INR 1,935.45 for order 1850 goes back to card ending 4421, holder Mohammed Arif.
+7. Delivery partner Suresh (phone 9876501234) said the gate code at Flat 302, Lakeview Residency was wrong.
+8. Order 6690 from test account customer 2: no personal data in this note.
+9. Kavya asked us to email the receipt to kavya.r@example.net and call +91-99001-22334 after 6 pm.
+10. Loyalty FCL-102938 and UPI kiran.m@ybl both belong to Kiran Mehta; order 2473, missing raita.

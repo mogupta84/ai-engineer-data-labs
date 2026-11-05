@@ -1,8 +1,8 @@
-# AI Engineer (Data): Labs 1 to 10
+# AI Engineer (Data): Labs 1 to 11
 
 The labs of the AI Engineer (Data) programme, with their data. Labs 1 to 6 also have notebooks for your
 own Databricks workspace: **start with the essentials labs**. From Day 5 the class labs run on
-Microsoft Azure, each in its own folder with a handbook: see **[Labs on Microsoft Azure](#labs-on-microsoft-azure-days-5-to-10)**.
+Microsoft Azure, each in its own folder with a handbook: see **[Labs on Microsoft Azure](#labs-on-microsoft-azure-days-5-to-11)**.
 
 New here? Read the **[onboarding guide to Labs 1 to 6](AI_Engineer_Data_Onboarding_Guide_Labs_1-6.pdf)**
 (PDF, 6 pages): how to get the labs, how to run them, and what each lab teaches.
@@ -206,7 +206,7 @@ type your prediction or your setting there, then run the next cell to see what r
 `YOUR CALL` cell already holds a working value, so a notebook runs from top to bottom before you
 change anything.
 
-## Labs on Microsoft Azure (Days 5 to 10)
+## Labs on Microsoft Azure (Days 5 to 11)
 
 From Day 5 the class labs run on Microsoft Azure: Microsoft Foundry for agents, Azure AI Search for
 documents and Microsoft Fabric for data pipelines. Each folder has a handbook (PDF) with every step and
@@ -222,6 +222,7 @@ any addresses you need. Most labs need no keys; where one does, the handbook say
 | 9 | 1 to 4 in Azure | Redo Labs 1 to 4 on your own documents: read them with Document Intelligence, index them in Azure AI Search, and answer with an agent that cites its sources | [`labs1-4_azure`](labs1-4_azure), handbook [Labs1-4_in_Azure.pdf](labs1-4_azure/Labs1-4_in_Azure.pdf) |
 | 9 | 9 | Build a ticket pipeline in Microsoft Fabric: copy only the new rows, park bad ones with a reason, label each ticket with a model, run the steps in order, and ask the tables questions with a data agent | [`lab9_fabric`](lab9_fabric), handbook [Fabric_Lab9_pipeline.pdf](lab9_fabric/Fabric_Lab9_pipeline.pdf) |
 | 10 | 10 | Add alarms to your Lab 7 agent and your Lab 9 pipeline: a quality check on right answers, tokens and seconds, traces, five health checks with an owner each, embedding drift and one MLflow run per day, and test each alarm by breaking something on purpose | [`lab10_monitoring`](lab10_monitoring), handbook [Lab10_knowing_when_it_breaks.pdf](lab10_monitoring/Lab10_knowing_when_it_breaks.pdf) |
+| 11 | 11 | Take personal data out before it is stored, give each team access to only its own documents, and keep an audit record of who saw what | [`lab11_governance`](lab11_governance), handbook [Lab11_who_may_see_what.pdf](lab11_governance/Lab11_who_may_see_what.pdf) |
 
 ## What is in this repository
 
@@ -238,10 +239,11 @@ lab5_foundry/  Lab 5 on Microsoft Foundry: the function behind the OpenAPI and M
 lab6_foundry/  Lab 6 on Microsoft Foundry: questions in English to SQL, the semantic layer, and its handbook
 lab7_foundry/  Lab 7 on Microsoft Foundry: a first enterprise agent, with tools, a plan, memory and a skill
 lab8_foundry/  Lab 8: an AI data agent in code with Microsoft Agent Framework, a skill and a router pipeline;
-               also the optional code of Lab 9 Part E
+               also the optional code of Lab 9 Part E and Lab 11
 labs1-4_azure/ Labs 1 to 4 in Azure: your documents (Document Intelligence, Azure AI Search, an agent with sources)
 lab9_fabric/   Lab 9: a governed ticket pipeline in Microsoft Fabric (notebooks)
 lab10_monitoring/  Lab 10: alarms on your agent (Foundry evaluation) and your pipeline (health checks, drift, MLflow)
+lab11_governance/  Lab 11: who may see what: personal data, access by team, an audit record
 training_plan/  the training plan for all 12 sessions, as PDF and Excel
 data/golden/  the judged and test questions for Labs 3 to 6, and what the two layout tools returned
 handouts/     the one-page briefs, the answer sheets and the Lab 2 memo template

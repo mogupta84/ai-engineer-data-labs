@@ -1,0 +1,18 @@
+Lab 11, G2: three ready-made searches for Search explorer (JSON view).
+Copy one block, from { to }, select all in the JSON query editor, paste it, click Search.
+Write down @odata.count, and whether partner_agreement_extract.pdf is among the 5 files.
+All three ask the same question; only the filter line, the list of teams, is different.
+
+--- 1. Asha, support agent (teams: all) ---
+{"search": "who pays for a refund when the restaurant packaging fails",
+ "filter": "audience/any(a: search.in(a, 'all'))",
+ "select": "file,title", "top": 5, "count": true}
+
+--- 2. Ravi, finance (teams: all, finance) ---
+{"search": "who pays for a refund when the restaurant packaging fails",
+ "filter": "audience/any(a: search.in(a, 'all,finance'))",
+ "select": "file,title", "top": 5, "count": true}
+
+--- 3. No filter at all ---
+{"search": "who pays for a refund when the restaurant packaging fails",
+ "select": "file,title", "top": 5, "count": true}
